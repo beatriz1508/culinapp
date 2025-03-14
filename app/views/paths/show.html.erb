@@ -1,5 +1,15 @@
 <h1><%= @path.title %></h1>
 <p><%= @path.description %></p>
 
+
+<%# index de world %>
+<% @worlds.each do |world| %>
+  <ul>
+    <li><%= world.id %></li>
+    <li><%= world.title %></li>
+    <%= link_to "jogar", world_path(world) %>
+  </ul>
+<% end %>
+
 <%= link_to "Voltar para a home", root_path %>
 <%= link_to "Deletar", path_path(@path), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
