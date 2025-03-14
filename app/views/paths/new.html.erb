@@ -1,0 +1,13 @@
+<div class="container">
+
+<% content_for :title, "New path" %>
+
+<h1>Hey team, create a new path</h1>
+
+<%= render "form", path: @path %>
+
+<br>
+
+<div>
+  <%= link_to "Back to paths", paths_path %>
+</div>
