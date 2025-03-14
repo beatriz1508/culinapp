@@ -1,0 +1,7 @@
+<h1>Escolha a trilha que deseja seguir</h1>
+<ul>
+  <% @paths.each do |path| %>
+  <li><%= path.title %></li>
+  <%= link_to "Ingressar na trilha", path %>
+  <% end %>
+</ul>
