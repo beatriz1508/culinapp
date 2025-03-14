@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :users
     resources :journeys
   end
-
+  resources :worlds
   # Defines the root path route ("/")
   root "paths#index"
 end
