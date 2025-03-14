@@ -31,6 +31,7 @@ class PathsController < ApplicationController
 
   def show
     @path = Path.find(params[:id])
+    @worlds = World.where(path: params[:id])
   end
 
   def destroy

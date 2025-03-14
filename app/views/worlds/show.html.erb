@@ -1,1 +1,3 @@
 <h1><%= @world.title %></h1>
+
+<%= link_to "delete", world_path(@world), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

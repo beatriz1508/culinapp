@@ -4,6 +4,11 @@ class WorldsController < ApplicationController
     @world = World.find(params[:id])
   end
 
+  def destroy
+    @world = World.find(params[:id])
+    @world.destroy
+  end
+
   private
 
   def world_params
