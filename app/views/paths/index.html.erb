@@ -1,9 +1,15 @@
-<h1>Escolha a trilha que deseja seguir</h1>
-<ul>
-  <% @paths.each do |path| %>
-  <li><%= path.title %></li>
-    <%= simple_form_for [path, @journey] do |f| %>
-      <%= f.submit "entrar na trilha" %>
-    <% end %>
-  <% end %>
-</ul>
+
+<body>
+  <section class="recipe-section">
+    <div class="recipe-background">
+      <ul>
+        <% @paths.each do |path| %>
+          <li><%= path.title %></li>
+            <%= simple_form_for [path, @journey] do |f| %>
+              <%= f.submit "entrar na trilha" %>
+              <% end %>
+            <% end %>
+      </ul>
+    </div>
+  </section>
+</body>
