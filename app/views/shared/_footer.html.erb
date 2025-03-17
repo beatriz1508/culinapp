@@ -1,1 +1,57 @@
-<h1>Olá mundo</h1>
+
+  <%# TODO Implementar a lógica dos botões do footer, exemplo nas linhas 5 e 31 %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="footer-container">
+    <% if controller_name == "paths" && action_name == "index" %>
+      <p class="active">
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
+      </p>
+
+      <p>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-share-nodes"></i>
+        <% end %>
+      </p>
+
+      <p>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-newspaper"></i>
+        <% end %>
+      </p>
+
+      <p>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-user"></i>
+        <% end %>
+      </p>
+
+
+    <% else %>
+      <p>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
+      </p>
+
+      <p>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-share-nodes"></i>
+        <% end %>
+      </p>
+
+      <p>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-newspaper"></i>
+        <% end %>
+      </p>
+
+      <p>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-user"></i>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>
