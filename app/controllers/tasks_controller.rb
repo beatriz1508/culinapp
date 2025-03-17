@@ -10,3 +10,5 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :ingredients, :steps, :done)
   end
 end
+
+#sóumcomentarioprakaue
