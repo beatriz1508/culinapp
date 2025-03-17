@@ -1,12 +1,49 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1% 2%;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 2%;
 }
 
-.navbar-lewagon .navbar-brand img {
+.avatar {
   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.curent-user {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  flex-grow: 1; /* Faz o texto ocupar o espaço restante */
+  text-align: left;
+  margin-left: 5%; /* Alinha à esquerda */
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container .nmbr-stars {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f5a623;
+}
+
+.icon-container .star {
+  margin-left: 2%;
+  font-size: 18px;
+  color: #f5a623;
 }

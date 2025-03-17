@@ -1,0 +1,22 @@
+.custom-button {
+  width: 343px;
+  height: 46px;
+  background-color: #FF9B05; 
+  color: white;
+  border: none;
+  border-radius: 38px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.custom-button:hover {
+  background-color: #fdae39;
+}
