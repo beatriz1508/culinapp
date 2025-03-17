@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_14_175011) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_14_172628) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,10 +32,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_14_175011) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.string "ingredients"
-    t.string "steps"
+    t.text "ingredients"
+    t.text "steps"
     t.boolean "done"
     t.bigint "world_id", null: false
+    t.integer "index"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["world_id"], name: "index_tasks_on_world_id"
@@ -57,6 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_14_175011) do
     t.string "title"
     t.boolean "done"
     t.bigint "path_id", null: false
+    t.integer "index"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["path_id"], name: "index_worlds_on_path_id"
