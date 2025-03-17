@@ -2,6 +2,8 @@
 <ul>
   <% @paths.each do |path| %>
   <li><%= path.title %></li>
-    <%= link_to "Ingressar na trilha", path %>
+    <%= simple_form_for [path, @journey] do |f| %>
+      <%= f.submit "entrar na trilha" %>
+    <% end %>
   <% end %>
 </ul>

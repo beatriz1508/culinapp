@@ -27,6 +27,7 @@ class PathsController < ApplicationController
 
   def index
     @paths = Path.all
+    @journey = Journey.new
   end
 
   def show
