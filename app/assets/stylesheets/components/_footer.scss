@@ -1,0 +1,41 @@
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 2% 0;
+  background-color: white;
+  border-top: 0.3% solid #ddd;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-container p {
+  margin: 0;
+  text-align: center;
+  cursor: pointer; /* Indica que os ícones são clicáveis */
+}
+
+.footer-container i {
+  font-size: 120%;
+  color: #b0b0b0; /* Cinza padrão */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Quando o item está ativo, fica laranja */
+.footer-container .active i {
+  color: #f5a623;
+}
+
+/* Adiciona a barrinha abaixo do ícone ativo */
+.footer-container .active::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 0.3%;
+  background-color: #f5a623;
+  margin: 5% auto 0;
+  border-radius: 10%;
+  transition: all 0.3s ease-in-out;
+}
