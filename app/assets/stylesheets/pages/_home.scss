@@ -1,1 +1,60 @@
 // Specific CSS for your home-page
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f4ed; /* Light background */
+  color: #333;
+}
+
+/* A wrapper for each "Salty" or "Sweet" block */
+.recipe-section {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  background-color: #f8f4ed;
+}
+
+/* The background area that includes the cream and orange strip */
+.recipe-background {
+  width: 600px;
+  height: 250px;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    #fff 60%,
+    #ffa500 40%
+  );
+  border-radius: 8px;
+  overflow: hidden; /* so the image doesn't go outside the box edges */
+}
+
+/* The image (Ramen or Donuts) that floats above */
+.recipe-image {
+  position: absolute;
+  top: 30px;          /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;       /* Adjust image size as needed */
+  height: auto;
+  z-index: 2;         /* Make sure it appears above the background */
+}
+
+/* The text label on the orange bar */
+.recipe-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffa500;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.75rem 0;
+  z-index: 3;
+}

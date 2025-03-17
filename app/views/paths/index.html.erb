@@ -1,14 +1,24 @@
-
 <body>
   <section class="recipe-section">
     <div class="recipe-background">
       <ul>
         <% @paths.each do |path| %>
-          <li><%= path.title %></li>
+          <li>
+            <img
+              class="dynamic-image"
+              src="<%= path.image_url %>"
+              alt="<%= path.title %>"
+            />
+
+            <div class="dynamic-title">
+              <%= path.title %>
+            </div>
+
             <%= simple_form_for [path, @journey] do |f| %>
-              <%= f.submit "entrar na trilha" %>
-              <% end %>
+              <%= f.submit "chose path" %>
             <% end %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </section>
