@@ -4,10 +4,8 @@
   <% @tasks.each do |task| %>
     <div class="task">
       <h3><%= task.title %></h3>
-      <p><%= task.description %></p>
     </div>
   <% end %>
 </div>
 
 <%= link_to "Back to Path", path_path(@world.path) %>
-

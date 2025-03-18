@@ -4,42 +4,54 @@
   </div>
 
   <!-- Chef Ilustração -->
-  <div class="svg-container">
-    <div class="chef-icon">
-      <%= image_tag "chef_pasta.svg", class: "chef-image" %>
-    </div>
+      <div class="svg-container">
+        <div class="chef-icon">
+          <%= image_tag "chef_pasta.svg", class: "chef-image" %>
+        </div>
 
     <!-- Detalhes da Receita -->
-    <div class="recipe-details">
-      <h3># Recipe Name</h3>
-      <h1 class="recipe-title"><%= @task.title %></h1>
+        <div class="recipe-details">
+          <div class="txt-container">
+            <p># Recipe Name</p>
+            <h5 class="recipe-title"><%= @task.title %></h5>
+            <br>
+            <p># Estimated Time</p>
+            <h5 class="time"># 45 minutes</h5>
+          </div>
+        </div>
+      </div>
 
-      <h3># Estimated Time</h3>
-      <h3 class="time"># 45 minutes</h3>
-    </div>
-  </div>
 
   <!-- Ingredientes -->
   <div class="ingredients">
-    <h3># Ingredients</h3>
+    <h3 class="bold"># Ingredients</h3>
     <ul class="ingredients-list">
 <%# TODO implementar a lógica de ingredients %>
-        <li class="task-list"><%= @task.ingredients %></li>
+      <% @task.ingredients.each_with_index do |t, index| %>
+        <% if index.even? %>
+          <li class="task-list even"><%= t %></li>
+        <% else %>
+          <li class="task-list odd"><%= t %></li>
+        <% end %>
+      <% end %>
 
     </ul>
   </div>
 
   <!-- Modo de Preparo -->
   <div class="how-to">
-    <h3># How To</h3>
+    <h3 class="bold"># How To</h3>
     <ul class="steps-list">
 <%# TODO implementar a lógica de step %>
-        <li class="task-list step"><%= @task.steps %></li>
+      <% @task.steps.each do |t| %>
+        <li class="task-list"><%= t %></li>
+      <% end %>
 
     </ul>
   </div>
 
   <!-- Botão Completar -->
   <div class="complete-btn">
-    <%= link_to "Complete", paths_path, class: "button" %>
+    <%= link_to "Complete", tasks_path, class: "button" %>
   </div>
+  <div class="btn-space"></div>
