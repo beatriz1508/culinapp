@@ -3,9 +3,25 @@
 <div class="tasks-container">
   <% @tasks.each do |task| %>
     <div class="task">
-      <h3><%= task.title %></h3>
-      <p><%= task.ingredients %></p>
-      <%= link_to "Choose Task", task_path(task), class: "btn btn-primary" %>
+  <h3><%= task.title %></h3>
+
+  <div class="lock-circle">
+    <i class="fas fa-lock"></i>
+  </div>
+
+  <div class="lock-circle">
+    <i class="fas fa-lock"></i>
+  </div>
+
+  <div class="lock-circle">
+    <i class="fas fa-lock"></i>
+  </div>
+
+  <div class="circle">
+    <i class="fas fa-star"></i>
+  </div>
+
+    <%= link_to "Choose Task", task_path(task), class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
