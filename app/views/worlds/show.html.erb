@@ -1,12 +1,26 @@
-<h1><%= @world.title %></h1>
-
 <div class="tasks-container">
-  <% @tasks.each do |task| %>
-    <div class="task">
-      <h3><%= task.title %></h3>
-      <p><%= task.ingredients %></p>
+  <div class="task-card">
+    <div class="text-container">
+      <span class="first-text"> World: <%= @world.title %></span>
     </div>
-  <% end %>
-</div>
+  <%= image_tag "tomato_small.svg", class: "tomato-image" %>
+  </div>
 
-<%= link_to "Back to World", path_path(@world.path) %>
+  <div class="invert-task">
+    <% @tasks.each do |task| %>
+      <div class="task">
+        <% if task.done == true %>
+        <div class="circle">
+          <%= link_to task_path(task) do %>
+          <i class="fas fa-star"></i>
+        </div>
+        <% end %>
+        <% else %>
+          <div class="lock-circle">
+            <i class="fas fa-lock"></i>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

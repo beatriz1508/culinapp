@@ -60,8 +60,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_184825) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.text "ingredients"
-    t.text "steps"
+    t.text "ingredients", default: [], array: true
+    t.text "steps", default: [], array: true
     t.boolean "done"
     t.bigint "world_id", null: false
     t.integer "index"
