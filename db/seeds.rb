@@ -43,7 +43,7 @@ path2 = Path.create!(
 # Criando mundos (worlds)
 world1 = World.create!(
   title: "Café da Manhã",
-  done: false,
+  done: true,
   path: path1
 )
 
@@ -106,7 +106,7 @@ task1 = Task.create!(
   title: "Panquecas Americanas Fofinhas",
   ingredients: ["xícara de farinha de trigo", 1, "colher de sopa de açúcar", 1, "colher de chá de fermento em pó", 1, "pitada de sal", 1, "xícara de leite", "3/4", "ovo", 1, "colher de sopa de manteiga derretida", 1, "colher de chá de essência de baunilha (opcional)", 1],
   steps: ["Em uma tigela, misture a farinha, o açúcar, o fermento e o sal.", "Em outra tigela, bata o ovo e adicione o leite, a manteiga derretida e a baunilha.", "Misture os ingredientes líquidos aos secos, mexendo suavemente até obter uma massa homogênea (não precisa bater muito).", "Aqueça uma frigideira antiaderente em fogo médio e unte levemente com manteiga ou óleo.", "Coloque pequenas porções da massa na frigideira e cozinhe até bolhas começarem a aparecer na superfície (cerca de 2 minutos).", "Vire a panqueca e cozinhe o outro lado por mais 1 minuto ou até dourar.", "Repita o processo com o restante da massa."],
-  done: false,
+  done: true,
   world: world1
 )
 
@@ -114,7 +114,7 @@ task2 = Task.create!(
   title: "Omelete de Queijo e Presunto",
   ingredients: ["ovos", 2, "colheres de sopa de leite (opcional, deixa mais fofinho)", 2, "Sal e pimenta-do-reino", "a gosto", "fatias de presunto picadas", 2, "fatias de queijo picadas ou raladas (mussarela, prato ou cheddar)", 2, "colher de sopa de manteiga ou azeite", 1, "Salsinha picada (opcional)", ""],
   steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
-  done: false,
+  done: true,
   world: world1
 )
 
@@ -138,7 +138,7 @@ task5 = Task.create!(
   title: "Crepioca Simples",
   ingredients: ["colheres de sopa de goma de tapioca", 2, "ovo", 1, "pitada de sal", 1, "colher de chá de azeite ou manteiga (opcional)", 1],
   steps: ["Em uma tigela, bata o ovo com uma pitada de sal.", "Acrescente a goma de tapioca e misture bem até formar uma massa homogênea.", "Aqueça uma frigideira antiaderente em fogo médio e, se desejar, adicione o azeite ou manteiga.", "Despeje a mistura na frigideira e espalhe uniformemente.", "Cozinhe por cerca de 2-3 minutos de cada lado, até ficar dourada e firme.", "Retire da frigideira e sirva quente."],
-  done: true,
+  done: false,
   world: world1
 )
 
@@ -146,7 +146,7 @@ task6 = Task.create!(
   title: "Panquecas Americanas Fofinhas",
   ingredients: ["xícara de farinha de trigo", 1, "colher de sopa de açúcar", 1, "colher de chá de fermento em pó", 1, "pitada de sal", 1, "xícara de leite", "3/4", "ovo", 1, "colher de sopa de manteiga derretida", 1, "colher de chá de essência de baunilha (opcional)", 1],
   steps: ["Em uma tigela, misture a farinha, o açúcar, o fermento e o sal.", "Em outra tigela, bata o ovo e adicione o leite, a manteiga derretida e a baunilha.", "Misture os ingredientes líquidos aos secos, mexendo suavemente até obter uma massa homogênea (não precisa bater muito).", "Aqueça uma frigideira antiaderente em fogo médio e unte levemente com manteiga ou óleo.", "Coloque pequenas porções da massa na frigideira e cozinhe até bolhas começarem a aparecer na superfície (cerca de 2 minutos).", "Vire a panqueca e cozinhe o outro lado por mais 1 minuto ou até dourar.", "Repita o processo com o restante da massa."],
-  done: false,
+  done: true,
   world: world2
 )
 
@@ -154,7 +154,7 @@ task7 = Task.create!(
   title: "Omelete de Queijo e Presunto",
   ingredients: ["ovos", 2, "colheres de sopa de leite (opcional, deixa mais fofinho)", 2, "Sal e pimenta-do-reino", "a gosto", "fatias de presunto picadas", 2, "fatias de queijo picadas ou raladas (mussarela, prato ou cheddar)", 2, "colher de sopa de manteiga ou azeite", 1, "Salsinha picada (opcional)", ""],
   steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
-  done: false,
+  done: true,
   world: world2
 )
 
@@ -170,7 +170,7 @@ task9 = Task.create!(
   title: "Vitamina de Banana e Aveia",
   ingredients: ["banana madura", 1, "copo (200ml) de leite (pode ser de vaca, amêndoas ou aveia)", 1, "colher de sopa de aveia em flocos", 1, "colher de chá de mel (opcional)", 1],
   steps: ["No liquidificador, adicione a banana, o leite, a aveia e o mel.", "Bata tudo até ficar bem cremoso.", "Acrescente gelo e bata novamente se quiser mais refrescante.", "Sirva imediatamente."],
-  done: false,
+  done: true,
   world: world2
 )
 
@@ -178,7 +178,7 @@ task10 = Task.create!(
   title: "Crepioca Simples",
   ingredients: ["colheres de sopa de goma de tapioca", 2, "ovo", 1, "pitada de sal", 1, "colher de chá de azeite ou manteiga (opcional)", 1],
   steps: ["Em uma tigela, bata o ovo com uma pitada de sal.", "Acrescente a goma de tapioca e misture bem até formar uma massa homogênea.", "Aqueça uma frigideira antiaderente em fogo médio e, se desejar, adicione o azeite ou manteiga.", "Despeje a mistura na frigideira e espalhe uniformemente.", "Cozinhe por cerca de 2-3 minutos de cada lado, até ficar dourada e firme.", "Retire da frigideira e sirva quente."],
-  done: true,
+  done: false,
   world: world2
 )
 
@@ -186,7 +186,7 @@ task11 = Task.create!(
   title: "Panquecas Americanas Fofinhas",
   ingredients: ["xícara de farinha de trigo", 1, "colher de sopa de açúcar", 1, "colher de chá de fermento em pó", 1, "pitada de sal", 1, "xícara de leite", "3/4", "ovo", 1, "colher de sopa de manteiga derretida", 1, "colher de chá de essência de baunilha (opcional)", 1],
   steps: ["Em uma tigela, misture a farinha, o açúcar, o fermento e o sal.", "Em outra tigela, bata o ovo e adicione o leite, a manteiga derretida e a baunilha.", "Misture os ingredientes líquidos aos secos, mexendo suavemente até obter uma massa homogênea (não precisa bater muito).", "Aqueça uma frigideira antiaderente em fogo médio e unte levemente com manteiga ou óleo.", "Coloque pequenas porções da massa na frigideira e cozinhe até bolhas começarem a aparecer na superfície (cerca de 2 minutos).", "Vire a panqueca e cozinhe o outro lado por mais 1 minuto ou até dourar.", "Repita o processo com o restante da massa."],
-  done: false,
+  done: true,
   world: world3
 )
 
@@ -194,7 +194,7 @@ task12 = Task.create!(
   title: "Omelete de Queijo e Presunto",
   ingredients: ["ovos", 2, "colheres de sopa de leite (opcional, deixa mais fofinho)", 2, "Sal e pimenta-do-reino", "a gosto", "fatias de presunto picadas", 2, "fatias de queijo picadas ou raladas (mussarela, prato ou cheddar)", 2, "colher de sopa de manteiga ou azeite", 1, "Salsinha picada (opcional)", ""],
   steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
-  done: false,
+  done: true,
   world: world3
 )
 
@@ -218,7 +218,7 @@ task15 = Task.create!(
   title: "Crepioca Simples",
   ingredients: ["colheres de sopa de goma de tapioca", 2, "ovo", 1, "pitada de sal", 1, "colher de chá de azeite ou manteiga (opcional)", 1],
   steps: ["Em uma tigela, bata o ovo com uma pitada de sal.", "Acrescente a goma de tapioca e misture bem até formar uma massa homogênea.", "Aqueça uma frigideira antiaderente em fogo médio e, se desejar, adicione o azeite ou manteiga.", "Despeje a mistura na frigideira e espalhe uniformemente.", "Cozinhe por cerca de 2-3 minutos de cada lado, até ficar dourada e firme.", "Retire da frigideira e sirva quente."],
-  done: true,
+  done: false,
   world: world3
 )
 
@@ -226,7 +226,7 @@ task16 = Task.create!(
   title: "Panquecas Americanas Fofinhas",
   ingredients: ["xícara de farinha de trigo", 1, "colher de sopa de açúcar", 1, "colher de chá de fermento em pó", 1, "pitada de sal", 1, "xícara de leite", "3/4", "ovo", 1, "colher de sopa de manteiga derretida", 1, "colher de chá de essência de baunilha (opcional)", 1],
   steps: ["Em uma tigela, misture a farinha, o açúcar, o fermento e o sal.", "Em outra tigela, bata o ovo e adicione o leite, a manteiga derretida e a baunilha.", "Misture os ingredientes líquidos aos secos, mexendo suavemente até obter uma massa homogênea (não precisa bater muito).", "Aqueça uma frigideira antiaderente em fogo médio e unte levemente com manteiga ou óleo.", "Coloque pequenas porções da massa na frigideira e cozinhe até bolhas começarem a aparecer na superfície (cerca de 2 minutos).", "Vire a panqueca e cozinhe o outro lado por mais 1 minuto ou até dourar.", "Repita o processo com o restante da massa."],
-  done: false,
+  done: true,
   world: world4
 )
 
@@ -234,7 +234,7 @@ task17 = Task.create!(
   title: "Omelete de Queijo e Presunto",
   ingredients: ["ovos", 2, "colheres de sopa de leite (opcional, deixa mais fofinho)", 2, "Sal e pimenta-do-reino", "a gosto", "fatias de presunto picadas", 2, "fatias de queijo picadas ou raladas (mussarela, prato ou cheddar)", 2, "colher de sopa de manteiga ou azeite", 1, "Salsinha picada (opcional)", ""],
   steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
-  done: false,
+  done: true,
   world: world4
 )
 
@@ -258,7 +258,7 @@ task20 = Task.create!(
   title: "Crepioca Simples",
   ingredients: ["colheres de sopa de goma de tapioca", 2, "ovo", 1, "pitada de sal", 1, "colher de chá de azeite ou manteiga (opcional)", 1],
   steps: ["Em uma tigela, bata o ovo com uma pitada de sal.", "Acrescente a goma de tapioca e misture bem até formar uma massa homogênea.", "Aqueça uma frigideira antiaderente em fogo médio e, se desejar, adicione o azeite ou manteiga.", "Despeje a mistura na frigideira e espalhe uniformemente.", "Cozinhe por cerca de 2-3 minutos de cada lado, até ficar dourada e firme.", "Retire da frigideira e sirva quente."],
-  done: true,
+  done: false,
   world: world4
 )
 
@@ -266,7 +266,7 @@ task21 = Task.create!(
   title: "Panquecas Americanas Fofinhas",
   ingredients: ["xícara de farinha de trigo", 1, "colher de sopa de açúcar", 1, "colher de chá de fermento em pó", 1, "pitada de sal", 1, "xícara de leite", "3/4", "ovo", 1, "colher de sopa de manteiga derretida", 1, "colher de chá de essência de baunilha (opcional)", 1],
   steps: ["Em uma tigela, misture a farinha, o açúcar, o fermento e o sal.", "Em outra tigela, bata o ovo e adicione o leite, a manteiga derretida e a baunilha.", "Misture os ingredientes líquidos aos secos, mexendo suavemente até obter uma massa homogênea (não precisa bater muito).", "Aqueça uma frigideira antiaderente em fogo médio e unte levemente com manteiga ou óleo.", "Coloque pequenas porções da massa na frigideira e cozinhe até bolhas começarem a aparecer na superfície (cerca de 2 minutos).", "Vire a panqueca e cozinhe o outro lado por mais 1 minuto ou até dourar.", "Repita o processo com o restante da massa."],
-  done: false,
+  done: true,
   world: world5
 )
 
@@ -274,7 +274,7 @@ task22 = Task.create!(
   title: "Omelete de Queijo e Presunto",
   ingredients: ["ovos", 2, "colheres de sopa de leite (opcional, deixa mais fofinho)", 2, "Sal e pimenta-do-reino", "a gosto", "fatias de presunto picadas", 2, "fatias de queijo picadas ou raladas (mussarela, prato ou cheddar)", 2, "colher de sopa de manteiga ou azeite", 1, "Salsinha picada (opcional)", ""],
   steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
-  done: false,
+  done: true,
   world: world5
 )
 
@@ -298,7 +298,7 @@ task25 = Task.create!(
   title: "Crepioca Simples",
   ingredients: ["colheres de sopa de goma de tapioca", 2, "ovo", 1, "pitada de sal", 1, "colher de chá de azeite ou manteiga (opcional)", 1],
   steps: ["Em uma tigela, bata o ovo com uma pitada de sal.", "Acrescente a goma de tapioca e misture bem até formar uma massa homogênea.", "Aqueça uma frigideira antiaderente em fogo médio e, se desejar, adicione o azeite ou manteiga.", "Despeje a mistura na frigideira e espalhe uniformemente.", "Cozinhe por cerca de 2-3 minutos de cada lado, até ficar dourada e firme.", "Retire da frigideira e sirva quente."],
-  done: true,
+  done: false,
   world: world5
 )
 
