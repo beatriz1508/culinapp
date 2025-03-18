@@ -1,1 +1,45 @@
-<h1><%= @task.title %></h1>
+  <!-- Imagem do prato -->
+  <div class="image-container">
+    <%= image_tag "plate.png", class: "dish-image" %>
+  </div>
+
+  <!-- Chef Ilustração -->
+  <div class="svg-container">
+    <div class="chef-icon">
+      <%= image_tag "chef_pasta.svg", class: "chef-image" %>
+    </div>
+
+    <!-- Detalhes da Receita -->
+    <div class="recipe-details">
+      <h3># Recipe Name</h3>
+      <h1 class="recipe-title"><%= @task.title %></h1>
+
+      <h3># Estimated Time</h3>
+      <h3 class="time"># 45 minutes</h3>
+    </div>
+  </div>
+
+  <!-- Ingredientes -->
+  <div class="ingredients">
+    <h3># Ingredients</h3>
+    <ul class="ingredients-list">
+<%# TODO implementar a lógica de ingredients %>
+        <li class="task-list"><%= @task.ingredients %></li>
+
+    </ul>
+  </div>
+
+  <!-- Modo de Preparo -->
+  <div class="how-to">
+    <h3># How To</h3>
+    <ul class="steps-list">
+<%# TODO implementar a lógica de step %>
+        <li class="task-list step"><%= @task.steps %></li>
+
+    </ul>
+  </div>
+
+  <!-- Botão Completar -->
+  <div class="complete-btn">
+    <%= link_to "Complete", paths_path, class: "button" %>
+  </div>
