@@ -12,10 +12,10 @@
     <!-- Detalhes da Receita -->
         <div class="recipe-details">
           <div class="txt-container">
-            <p># Recipe Name</p>
+            <p>Recipe Name</p>
             <h5 class="recipe-title"><%= @task.title %></h5>
             <br>
-            <p># Estimated Time</p>
+            <p>Estimated Time</p>
             <h5 class="time"># 45 minutes</h5>
           </div>
         </div>
@@ -24,7 +24,7 @@
 
   <!-- Ingredientes -->
   <div class="ingredients">
-    <h3 class="bold"># Ingredients</h3>
+    <h3 class="bold">Ingredients</h3>
     <ul class="ingredients-list">
 <%# TODO implementar a lógica de ingredients %>
       <% @task.ingredients.each_with_index do |t, index| %>
@@ -40,7 +40,7 @@
 
   <!-- Modo de Preparo -->
   <div class="how-to">
-    <h3 class="bold"># How To</h3>
+    <h3 class="bold">Recipe Steps</h3>
     <ul class="steps-list">
 <%# TODO implementar a lógica de step %>
       <% @task.steps.each do |t| %>
