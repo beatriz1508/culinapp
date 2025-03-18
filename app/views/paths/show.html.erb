@@ -1,17 +1,37 @@
-<h1><%= @path.title %></h1>
-<p><%= @path.description %></p>
 
+<%# <h6><%= @path.title %>
+<%# <p><%= @path.description</p> %>
+
+<div class="world-container">
+  <% @worlds.each do |world| %>
+    <div class="world-card">
+      <div class="element-2">
+        <%= link_to world_path(world), class: "world-title-link" do %>
+          <span class="world-title"><%= world.title %></span>
+        <% end %>
+        <span class="lock-icon">🔒</span>
+      </div>
+
+      <!-- border detail -->
+      <span class="thin-band"></span>
+
+      <div class="world-image">
+        <%= image_tag "world-#{world.id}.svg", alt: world.title %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%#
+# ------>>>>> codigo antigo comentado <<<<<---------%>
+<%# <h1><%= @path.title</h1>
+<%# <p><%= @path.description %>
 
 <%# index de world %>
-<% @worlds.each do |world| %>
-  <ul>
-    <li><%= world.id %></li>
-    <li><%= world.title %></li>
-    <%= link_to "Play", world_path(world) %>
-  </ul>
+<%# <% @worlds.each do |world| %>
+  <%# <ul>
+    <li><%= world.id %>
+    <%# <li><%= world.title %>
+    <%# <%= link_to "Play", world_path(world) %>
+  <%# </ul>
 <% end %>
-
-<%= link_to "Back to Paths", root_path %>
-<%= link_to "Delete", path_path(@path), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-
-
