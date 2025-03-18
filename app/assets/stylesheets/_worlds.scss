@@ -4,6 +4,17 @@
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+
+
+}
+
+.invert-task{
+  display: flex;
+  flex-direction: column-reverse; /* Inverte a ordem dos elementos */
+  overflow-y: scroll; /* Habilita o scroll vertical */
+  // height: 400px;
+  // padding: 0 50% 0 50%
+
 }
 
 
@@ -12,7 +23,7 @@
   align-items: center;
   gap: 12px;
   max-width: auto;
-  margin: 10px 0;
+  // margin: 10px 0;
 }
 
 .text-container {
