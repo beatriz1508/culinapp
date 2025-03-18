@@ -1,0 +1,154 @@
+/* Estilos Gerais */
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de Progresso */
+.progress-bar {
+  display: flex;
+  justify-content: center; /* Centraliza os números */
+  align-items: center;
+  gap: 10px; /* Espaçamento entre os números */
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.progress-bar .active {
+  background: #f4b400;
+  color: white;
+}
+
+/* Imagem */
+.image-container {
+  text-align: center;
+  padding-inline: 5%;
+}
+
+.dish-image {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Chef Ilustração */
+.chef-icon .chef-image {
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+  width: 90%;
+}
+
+// .chef-image {
+//   width: 50%;
+// }
+
+/* Detalhes da Receita */
+.recipe-details {
+  text-align: center;
+  background: #fdf3e4;
+  padding: 15px;
+  // border-radius: 10px;
+  margin-top: 20px;
+  margin-right: 5%;
+}
+
+.recipe-title {
+  color: #333;
+  // font-size: 22px;
+}
+
+.time {
+  font-weight: bold;
+  // color: #f4b400;
+}
+
+/* Ingredientes */
+.ingredients {
+  background: #fdf3e4;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.ingredients-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ingredients-list .task-list {
+  padding: 5px 0;
+}
+
+/* Modo de preparo */
+.how-to {
+  background: #fdf3e4;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.steps-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.step {
+  // background: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão Completar */
+.complete-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  background: #f4b400;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #d89e00;
+}
+
+// /* Responsividade */
+// @media (max-width: 600px) {
+//   .container {
+//       width: 95%;
+//   }
+
+//   .chef-image {
+//       width: 60px;
+//   }
+// }
+
+.svg-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
