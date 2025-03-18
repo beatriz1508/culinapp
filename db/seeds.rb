@@ -64,7 +64,7 @@ task1 = Task.create!(
   title: "Find the secret ingredient",
   ingredients: "Mushrooms, herbs",
   steps: "Explore the forest and find the rare mushrooms.",
-  done: false,
+  done: true,
   world: world1
 )
 

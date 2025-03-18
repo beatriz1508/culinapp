@@ -1,27 +1,29 @@
-<h1><%= @world.title %></h1>
 
 <div class="tasks-container">
   <% @tasks.each do |task| %>
     <div class="task">
-  <h3><%= task.title %></h3>
-
-  <div class="lock-circle">
-    <i class="fas fa-lock"></i>
+  <%# <h3><%= task.title %></h3>
+  <div class="task-card">
+  <div class="text-container">
+    <span class="first-text">WORLD 1</span>
+    <span class="second-text">Task 1</span>
   </div>
-
-  <div class="lock-circle">
-    <i class="fas fa-lock"></i>
-  </div>
-
-  <div class="lock-circle">
-    <i class="fas fa-lock"></i>
-  </div>
-
-  <div class="circle">
+  <div class="vertical-line"></div>
+    <%= image_tag "tomato_small.svg", class: "tomato-image" %>
+</div>
+<% if task.done == true %>
+<div class="circle">
+  <%= link_to task_path(task) do %>
     <i class="fas fa-star"></i>
+  <% end %>
   </div>
+<% else %>
+  <div class="lock-circle">
+    <i class="fas fa-lock"></i>
+  </div>
+<% end %>
 
-    <%= link_to "Choose Task", task_path(task), class: "btn btn-primary" %>
+
     </div>
   <% end %>
 </div>
