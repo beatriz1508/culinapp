@@ -1,15 +1,14 @@
 
+<div class="home-body">
+  <% @paths.first(2).each_with_index do |path, index| %>
+    <div class="trail-card">
+      <% if index == 0 %>
+        <%= image_tag "salty.svg", class: "card-image", alt: path.title %>
+      <% else %>
+        <%= image_tag "sweet.svg", class: "card-image", alt: path.title %>
+      <% end %>
 
-  <div class="main">
-    <% @paths.first(2).each_with_index do |path, index| %>
-      <div class="trail-card">
-        <% if index == 0 %>
-          <%= image_tag "salty.svg", class: "card-image", alt: path.title %>
-        <% else %>
-          <%= image_tag "sweet.svg", class: "card-image", alt: path.title %>
-        <% end %>
-
-        <div class="stripe-top"></div>
+      <div class="stripe-top"></div>
 
       <%= simple_form_for [path, @journey] do |f| %>
         <div class="stripe-bottom">
@@ -22,3 +21,4 @@
       <% end %>
     </div>
   <% end %>
+</div>
