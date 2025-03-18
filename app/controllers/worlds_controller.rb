@@ -3,6 +3,7 @@ class WorldsController < ApplicationController
 
   def show
     @tasks = Task.where(world: @world.id)
+    # raise
   end
 
   def destroy
