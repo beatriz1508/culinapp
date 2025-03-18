@@ -62,27 +62,28 @@ world3 = World.create!(
 # Criando tarefas (tasks) associadas a mundos
 task1 = Task.create!(
   title: "Find the secret ingredient",
-  ingredients: "Mushrooms, herbs",
-  steps: "Explore the forest and find the rare mushrooms.",
+  ingredients: ["Mushrooms", 1, "herbs", 2],
+  steps: ["Explore the forest", "Find the rare mushrooms"],
   done: false,
   world: world1
 )
 
 task2 = Task.create!(
   title: "Make a Parisian soufflé",
-  ingredients: "Eggs, cheese, butter, flour",
-  steps: "Follow the recipe carefully to make the perfect soufflé.",
+  ingredients: ["Eggs", 1, "cheese", 2, "butter", 3, "flour", 4],
+  steps: ["Follow the recipe carefully", "Make the perfect soufflé"],
   done: false,
   world: world2
 )
 
 task3 = Task.create!(
   title: "Defeat the dragon",
-  ingredients: "Sword, shield, potion",
-  steps: "Enter the castle and defeat the dragon guarding the treasure.",
+  ingredients: ["Sword", 1, "shield", 2, "potion", 3],
+  steps: ["Enter the castle", "Defeat the dragon guarding the treasure"],
   done: true,
   world: world3
 )
+
 
 # Criando jornadas (journeys)
 Journey.create!(
