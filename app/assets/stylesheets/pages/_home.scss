@@ -1,3 +1,4 @@
+
 /* Basic resets */
 * {
   margin: 0;
@@ -66,5 +67,10 @@ body {
 
 /* Hover effect if needed */
 .path-action:hover {
-  background-color: #e69500;
+  background-color: #e69500
+// Specific CSS for your home-page
+
+.cards-container {
+  gap: 20px;            /* space between the two cards */
+  margin-top: 2rem;
 }
