@@ -2,7 +2,11 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    @step = 0
+  end
+
+
+  def update
+    raise
   end
 
   private

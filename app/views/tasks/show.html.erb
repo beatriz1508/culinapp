@@ -27,13 +27,6 @@
     <h3 class="bold">Ingredients</h3>
     <ul class="ingredients-list">
 <%# TODO implementar a lógica de ingredients %>
-      <% @task.ingredients.each_with_index do |t, index| %>
-        <% if index.even? %>
-          <li class="task-list even"><%= t %></li>
-        <% else %>
-          <li class="task-list odd"><%= t %></li>
-        <% end %>
-      <% end %>
 
     </ul>
   </div>
