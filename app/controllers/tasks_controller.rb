@@ -2,7 +2,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    @step = 0
+    @ingredients = Ingredient.where(task: @task.id)
   end
 
   private
