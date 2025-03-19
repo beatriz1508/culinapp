@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_17_184825) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_19_152230) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,15 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_184825) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.string "quantity"
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_ingredients_on_task_id"
+  end
+
   create_table "journeys", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "path_id", null: false
@@ -60,7 +69,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_184825) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.text "ingredients", default: [], array: true
+    t.string "time"
+    t.string "image_url"
     t.text "steps", default: [], array: true
     t.boolean "done"
     t.bigint "world_id", null: false
@@ -94,6 +104,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_184825) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "ingredients", "tasks"
   add_foreign_key "journeys", "paths"
   add_foreign_key "journeys", "users"
   add_foreign_key "tasks", "worlds"
