@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :worlds
-  resources :tasks
+  resources :tasks, only: [:index, :show, :update]
 
   # Defines the root path route ("/")
   root "paths#index"
