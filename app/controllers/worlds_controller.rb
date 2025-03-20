@@ -2,7 +2,7 @@ class WorldsController < ApplicationController
   before_action :set_world, only: [:show]
 
   def show
-    @tasks = Task.where(world: @world.id)
+    @tasks = @world.tasks
     # raise
   end
 
