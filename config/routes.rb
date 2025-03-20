@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   end
 
   resources :worlds
-  resources :tasks, only: [:index, :show, :update]
+  resources :tasks, only: [:show, :update] do
+    member do
+      get :completed
+    end
+  end
 
   # Defines the root path route ("/")
   root "paths#index"

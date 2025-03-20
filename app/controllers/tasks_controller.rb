@@ -9,7 +9,11 @@ class TasksController < ApplicationController
     task = Task.find(params[:id])
     next_task = task.world.tasks.where(done: false).first
     next_task.update!(done: true)
-    redirect_to tasks_path
+    redirect_to completed_task_path(task)
+  end
+
+  def completed
+    @task = Task.find(params[:id])
   end
 
   private
