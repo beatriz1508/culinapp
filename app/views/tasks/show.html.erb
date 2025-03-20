@@ -49,7 +49,7 @@
 
   <!-- Botão Completar -->
   <div class="complete-btn">
-    <%= simple_form_for @task do |f| %>
+    <%= simple_form_for [@task, @review], data: {turbo: false} do |f| %>
       <%= f.submit "Complete", class: "button" %>
     <% end %>
   </div>

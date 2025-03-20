@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    @review = Review.new
     @ingredients = Ingredient.where(task: @task.id)
   end
 
@@ -12,11 +13,7 @@ class TasksController < ApplicationController
     redirect_to completed_task_path(task)
   end
 
-  def completed
-    @task = Task.find(params[:id])
-    @review = Review.new
-    # redirect_to task_reviews_path
-  end
+
 
   private
 
