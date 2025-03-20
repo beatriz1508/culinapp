@@ -72,6 +72,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_135555) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "feedback"
     t.string "img_url"
@@ -87,9 +89,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_135555) do
     t.string "title"
     t.text "ingredients"
     t.text "steps"
-    t.string "time"
-    t.string "image_url"
-    t.text "steps", default: [], array: true
     t.boolean "done"
     t.bigint "world_id", null: false
     t.integer "index"
