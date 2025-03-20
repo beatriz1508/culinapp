@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resource :profiles, only: :show, as: :user_root
   resources :reviews, only: [:show, :update]
+  get "ranking", to: "profiles#ranking", as: :ranking
 
   # Defines the root path route ("/")
   root "paths#index"

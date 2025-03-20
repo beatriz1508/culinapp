@@ -3,7 +3,8 @@ class WorldsController < ApplicationController
 
   def show
     @tasks = @world.tasks.order(:created_at)
-    last_completed_review = current_user.reviews.order(created_at: :desc).limit(1).take
+
+    last_completed_review = current_user.reviews.includes(:task).where(task: {world_id: @world.id}).order(created_at: :desc).limit(1).take
       if last_completed_review.present?
         @next_task = @tasks.where("created_at > ?", last_completed_review.task.created_at).order(:created_at).limit(1).take
       else
