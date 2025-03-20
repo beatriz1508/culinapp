@@ -8,4 +8,7 @@ class ProfilesController < ApplicationController
     .order('reviews_count DESC')
   end
 
+  def show
+    @badges = current_user.reviews.joins(task: :world).group("worlds.id").count
+  end
 end
