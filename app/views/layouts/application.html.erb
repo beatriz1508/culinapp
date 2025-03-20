@@ -11,11 +11,15 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
 
 
     <%= yield %>
     <%= render "shared/footer" %>
+  <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

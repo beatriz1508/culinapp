@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   end
 
   resources :worlds
-  resources :tasks
+  resources :tasks, only: [:show, :update] do
+    member do
+      get :completed
+    end
+    resources :reviews, only: :create
+  end
 
   resource :profiles, only: :show
 

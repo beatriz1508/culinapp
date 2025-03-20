@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :journeys
   has_many :paths, through: :journeys
   has_one :profile, dependent: :destroy
+  has_many :reviews
 end

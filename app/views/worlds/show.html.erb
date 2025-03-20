@@ -3,18 +3,18 @@
     <div class="text-container">
       <span class="first-text"> World: <%= @world.title %></span>
     </div>
-  <%= image_tag "tomato_small.svg", class: "tomato-image" %>
+  <%= image_tag "corn.svg", class: "tomato-image" %>
   </div>
 
   <div class="invert-task">
     <% @tasks.each do |task| %>
       <div class="task">
-        <% if task.done == true %>
-        <div class="circle">
-          <%= link_to task_path(task) do %>
-          <i class="fas fa-star"></i>
-        </div>
-        <% end %>
+        <% if task.done? %>
+          <div class="circle">
+            <%= link_to task_path(task) do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
         <% else %>
           <div class="lock-circle">
             <i class="fas fa-lock"></i>

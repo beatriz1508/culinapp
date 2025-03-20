@@ -1,6 +1,6 @@
   <!-- Imagem do prato -->
   <div class="image-container">
-    <%= image_tag "plate.png", class: "dish-image" %>
+    <%= image_tag @task.image_url, class: "dish-image" %>
   </div>
 
   <!-- Chef Ilustração -->
@@ -16,7 +16,7 @@
             <h5 class="recipe-title"><%= @task.title %></h5>
             <br>
             <p>Estimated Time</p>
-            <h5 class="time"># 45 minutes</h5>
+            <h5 class="time"><%= @task.time %></h5>
           </div>
         </div>
       </div>
@@ -27,12 +27,9 @@
     <h3 class="bold">Ingredients</h3>
     <ul class="ingredients-list">
 <%# TODO implementar a lógica de ingredients %>
-      <% @task.ingredients.each_with_index do |t, index| %>
-        <% if index.even? %>
-          <li class="task-list even"><%= t %></li>
-        <% else %>
-          <li class="task-list odd"><%= t %></li>
-        <% end %>
+      <% @ingredients.each do |ingredient| %>
+          <li class="task-list even"><%= ingredient.name %></li>
+          <li class="task-list odd"><%= ingredient.quantity %></li>
       <% end %>
 
     </ul>
@@ -52,6 +49,8 @@
 
   <!-- Botão Completar -->
   <div class="complete-btn">
-    <%= link_to "Complete", tasks_path, class: "button" %>
+    <%= simple_form_for @task do |f| %>
+      <%= f.submit "Complete", class: "button" %>
+    <% end %>
   </div>
   <div class="btn-space"></div>
