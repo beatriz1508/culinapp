@@ -1,4 +1,4 @@
 class Path < ApplicationRecord
-  has_many :journeys
-  has_many :worlds
+  has_many :journeys, dependent: :destroy
+  has_many :worlds, dependent: :destroy
 end

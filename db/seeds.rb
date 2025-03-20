@@ -10,12 +10,12 @@
 # db/seeds.rb
 
 # Remover todos os dados existentes para evitar duplicações
-Journey.destroy_all
-Task.destroy_all
-World.destroy_all
+# Ingredient.destroy_all
+# Journey.destroy_all
+# Task.destroy_all
+# World.destroy_all
 Path.destroy_all
 User.destroy_all
-Ingredient.destroy_all
 
 # Criando usuários
 user1 = User.create!(
@@ -169,85 +169,85 @@ task7 = Task.create!(
 Ingredient.create!(
   name: "farinha de trigo",
   quantity: "1 xícara",
-  task_id: 1
+  task: task1
 )
 
 Ingredient.create!(
   name: "ovos",
   quantity: "2 unidades",
-  task_id: 2
+  task: task2
 )
 
 Ingredient.create!(
   name: "polvilho doce",
   quantity: "2 xícaras",
-  task_id: 3
+  task: task3
 )
 
 Ingredient.create!(
   name: "banana madura",
   quantity: "1 unidade",
-  task_id: 4
+  task: task4
 )
 
 Ingredient.create!(
   name: "goma de tapioca",
   quantity: "2 colheres de sopa",
-  task_id: 5
+  task: task5
 )
 
 Ingredient.create!(
   name: "farinha de trigo",
   quantity: "1 xícara",
-  task_id: 6
+  task: task6
 )
 
 Ingredient.create!(
   name: "ovos",
   quantity: "2 unidades",
-  task_id: 7
+  task: task7
 )
 
 Ingredient.create!(
   name: "polvilho doce",
   quantity: "2 xícaras",
-  task_id: 1
+  task: task1
 )
 
 Ingredient.create!(
   name: "banana madura",
   quantity: "1 unidade",
-  task_id: 2
+  task: task2
 )
 
 Ingredient.create!(
   name: "goma de tapioca",
   quantity: "2 colheres de sopa",
-  task_id: 3
+  task: task3
 )
 
 Ingredient.create!(
   name: "farinha de trigo",
   quantity: "1 xícara",
-  task_id: 4
+  task: task4
 )
 
 Ingredient.create!(
   name: "ovos",
   quantity: "2 unidades",
-  task_id: 5
+  task: task5
 )
 
 Ingredient.create!(
   name: "polvilho doce",
   quantity: "2 xícaras",
-  task_id: 6
+  task: task6
 )
 
 Ingredient.create!(
   name: "banana madura",
   quantity: "1 unidade",
-  task_id: 7
+  task: task7
 )
 
 # Criando jornadas (journeys)
