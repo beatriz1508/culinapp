@@ -11,7 +11,7 @@
 .invert-task{
   display: flex;
   flex-direction: column-reverse; /* Inverte a ordem dos elementos */
-   /* Habilita o scroll vertical */
+  overflow-y: scroll; /* Habilita o scroll vertical */
   // height: 400px;
   // padding: 0 50% 0 50%
 
@@ -44,6 +44,7 @@
   align-items: center;
   gap: 12px;
   width: 100%;
+
   // max-width: 300px;
 }
 
