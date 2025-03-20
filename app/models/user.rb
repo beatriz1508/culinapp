@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :journeys
   has_many :paths, through: :journeys
+  has_one :profile, dependent: :destroy
 end

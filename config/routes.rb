@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :worlds
   resources :tasks
 
+  resource :profiles, only: :show
+
   # Defines the root path route ("/")
   root "paths#index"
 end
