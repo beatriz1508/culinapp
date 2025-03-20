@@ -67,6 +67,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_135555) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   create_table "reviews", force: :cascade do |t|
     t.string "feedback"
     t.string "img_url"
@@ -80,6 +85,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_135555) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
+    t.text "ingredients"
+    t.text "steps"
     t.string "time"
     t.string "image_url"
     t.text "steps", default: [], array: true
@@ -99,6 +106,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_135555) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -118,6 +127,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_135555) do
   add_foreign_key "ingredients", "tasks"
   add_foreign_key "journeys", "paths"
   add_foreign_key "journeys", "users"
+  add_foreign_key "profiles", "users"
   add_foreign_key "reviews", "tasks"
   add_foreign_key "reviews", "users"
   add_foreign_key "tasks", "worlds"

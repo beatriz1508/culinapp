@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: [:show, :update]
+  resource :profiles, only: :show
+
   # Defines the root path route ("/")
   root "paths#index"
 end
