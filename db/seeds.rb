@@ -46,13 +46,15 @@ path2 = Path.create!(
 world1 = World.create!(
   title: "Café da Manhã",
   done: true,
-  path: path1
+  path: path1,
+  image_path: "badge1.svg"
 )
 
 world2 = World.create!(
   title: "Almoço",
   done: true,
-  path: path1
+  path: path1,
+  image_path: "badge2.svg"
 )
 
 world3 = World.create!(
