@@ -118,7 +118,7 @@ task2 = Task.create!(
   time: "15 minutos",
   image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
   steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
-  done: true,
+  done: false,
   world: world1
 )
 
@@ -127,7 +127,7 @@ task3 = Task.create!(
   time: "40 minutos",
   image_url: "https://moinhoglobo.com.br/wp-content/uploads/2016/03/44-p%C3%A3o-de-queijo.jpg",
   steps: ["Em uma panela, aqueça o leite, o óleo e o sal até começar a ferver.", "Em uma tigela, misture os polvilhos e despeje o líquido quente, mexendo bem até formar uma massa grudenta.", "Deixe a massa amornar e adicione os ovos, misturando bem.", "Acrescente o queijo ralado e misture até a massa ficar homogênea.", "Modele bolinhas pequenas com as mãos untadas com óleo.", "Disponha as bolinhas em uma assadeira untada ou forrada com papel manteiga.", "Asse em forno preaquecido a 180°C por cerca de 25 a 30 minutos, ou até dourarem levemente."],
-  done: true,
+  done: false,
   world: world1
 )
 
