@@ -13,10 +13,6 @@ class TasksController < ApplicationController
     redirect_to completed_task_path(task)
   end
 
-
-
-  
-
   private
 
   def task_params

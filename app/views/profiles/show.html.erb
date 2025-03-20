@@ -12,7 +12,13 @@
       Profile de <%= current_user.username %>
 
 
-      <p>paths do usuario:</p>
+      <% @badges.each do |world_id, reviews| %>
+          <% if reviews == 5 %>
+          <%= image_tag asset_path(World.find(world_id).image_path), alt: "Le Wagon", width: 200 %>
+          <% end %>
+      <% end %>
+
+
 
       <ul>
         <% current_user.paths.each do |path| %>
