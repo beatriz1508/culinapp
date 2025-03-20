@@ -9,7 +9,7 @@
   <div class="invert-task">
     <% @tasks.each do |task| %>
       <div class="task">
-        <% if task.done? %>
+        <% if task == @next_task || current_user.reviews.find_by(task: task) %>
           <div class="circle">
             <%= link_to task_path(task) do %>
               <i class="fas fa-star"></i>

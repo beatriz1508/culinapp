@@ -89,6 +89,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_135555) do
     t.string "title"
     t.text "ingredients"
     t.text "steps"
+    t.string "time"
+    t.string "image_url"
+    t.text "steps", default: [], array: true
     t.boolean "done"
     t.bigint "world_id", null: false
     t.integer "index"
