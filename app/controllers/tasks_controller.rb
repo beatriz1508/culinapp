@@ -14,6 +14,8 @@ class TasksController < ApplicationController
 
   def completed
     @task = Task.find(params[:id])
+    @review = Review.new
+    # redirect_to task_reviews_path
   end
 
   private

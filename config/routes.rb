@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     member do
       get :completed
     end
+    resources :reviews, only: :create
   end
 
   # Defines the root path route ("/")

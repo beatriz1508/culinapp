@@ -14,6 +14,7 @@
 # Journey.destroy_all
 # Task.destroy_all
 # World.destroy_all
+Review.destroy_all
 Path.destroy_all
 User.destroy_all
 
