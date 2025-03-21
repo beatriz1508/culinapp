@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:edit, :update, :index]
   resource :profiles, only: :show
-  resources :questions, only: [:index, :create]
+  resources :chatbot_questions, only: [:index, :create]
   resource :profiles, only: :show, as: :user_root
   resources :reviews, only: [:show, :update]
   get "ranking", to: "profiles#ranking", as: :ranking
