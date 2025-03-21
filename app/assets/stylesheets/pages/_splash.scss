@@ -1,0 +1,28 @@
+.splash{
+  background-color: #FF9B05;
+  // text-align: center;
+  min-height: 100vh;
+  // padding-top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+
+@keyframes splash {
+  from{
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.splash-intro{
+  animation: splash 3s ease forwards;
+  pointer-events: none;
+  position: relative;
+  z-index: 10000;
+}

@@ -25,12 +25,12 @@ Profile.create!(user: user2)
 
 # Creating Paths
 path1 = Path.create!(
-  title: "Journey to the Unknown",
+  title: "Salty Recipes",
   description: "A thrilling adventure full of surprises."
 )
 
 path2 = Path.create!(
-  title: "The Culinary Quest",
+  title: "Sweet Recipes",
   description: "A journey to explore the world of culinary delights."
 )
 
@@ -109,65 +109,65 @@ Journey.create!(user: user2, path: path2)
 
 # Confirmation output# Criando mundos (worlds)
 world1 = World.create!(
-  title: "Café da Manhã",
+  title: "Brazil",
   done: true,
   path: path1,
   image_path: "badge1.svg"
 )
 
 world2 = World.create!(
-  title: "Almoço",
+  title: "South America",
   done: true,
   path: path1,
   image_path: "badge2.svg"
 )
 
 world3 = World.create!(
-  title: "Jantar",
+  title: "North America",
   done: true,
-  path: path1
+  path: path1,
+  image_path: "badge2.svg"
 )
 
 world4 = World.create!(
-  title: "Lanche",
+  title: "Europe",
   done: false,
-  path: path1
+  path: path1,
+  image_path: "badge2.svg"
 )
 
 world5 = World.create!(
-  title: "Sobremesas",
+  title: "Mediterranean",
   done: false,
-  path: path1
+  path: path1,
+  image_path: "badge2.svg"
 )
 
 world6 = World.create!(
-  title: "Café da Manhã",
+  title: "Asia",
   done: false,
-  path: path2
+  path: path1,
+  image_path: "badge2.svg"
 )
 
 world7 = World.create!(
-  title: "Almoço",
+  title: "Brazil",
   done: false,
-  path: path2
+  path: path2,
+  image_path: "badge2.svg"
+)
+world7 = World.create!(
+  title: "North America",
+  done: false,
+  path: path2,
+  image_path: "badge2.svg"
 )
 
-world8 = World.create!(
-  title: "Jantar",
-  done: true,
-  path: path2
-)
-
-world9 = World.create!(
-  title: "Lanche",
-  done: true,
-  path: path2
-)
-
-world10 = World.create!(
-  title: "Sobremesas",
-  done: true,
-  path: path2
+world7 = World.create!(
+  title: "Europe",
+  done: false,
+  path: path2,
+  image_path: "badge2.svg"
 )
 
 # Criando tarefas (tasks) associadas a mundos
@@ -232,6 +232,78 @@ task7 = Task.create!(
   steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
   done: true,
   world: world2
+)
+
+task8 = Task.create!(
+  title: "Omelete de Queijo e Presunto",
+  time: "15 minutos",
+  image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
+  steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
+  done: true,
+  world: world2
+)
+
+task9 = Task.create!(
+  title: "Omelete de Queijo e Presunto",
+  time: "15 minutos",
+  image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
+  steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
+  done: true,
+  world: world2
+)
+
+task10 = Task.create!(
+  title: "Omelete de Queijo e Presunto",
+  time: "15 minutos",
+  image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
+  steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
+  done: true,
+  world: world2
+)
+
+task11 = Task.create!(
+  title: "Omelete de Queijo e Presunto",
+  time: "15 minutos",
+  image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
+  steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
+  done: true,
+  world: world3
+)
+
+task12 = Task.create!(
+  title: "Omelete de Queijo e Presunto",
+  time: "15 minutos",
+  image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
+  steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
+  done: true,
+  world: world3
+)
+
+task13 = Task.create!(
+  title: "Omelete de Queijo e Presunto",
+  time: "15 minutos",
+  image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
+  steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
+  done: true,
+  world: world3
+)
+
+task14 = Task.create!(
+  title: "Omelete de Queijo e Presunto",
+  time: "15 minutos",
+  image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
+  steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
+  done: true,
+  world: world3
+)
+
+task15 = Task.create!(
+  title: "Omelete de Queijo e Presunto",
+  time: "15 minutos",
+  image_url: "https://vitat.com.br/receitas/images/recipeshandler.jpg?id=2152&tipo=r&default=s",
+  steps: ["Em uma tigela, bata os ovos com o leite, o sal e a pimenta até ficarem bem misturados.", "Aqueça uma frigideira antiaderente em fogo médio e derreta a manteiga ou coloque um fio de azeite.", "Despeje a mistura dos ovos na frigideira e cozinhe por 1-2 minutos até começar a firmar nas bordas.", "Adicione o queijo e o presunto picados sobre metade da omelete.", "Quando o fundo estiver dourado e a parte de cima levemente úmida, dobre a omelete ao meio com a ajuda de uma espátula.", "Cozinhe por mais 1 minuto até o queijo derreter completamente.", "Retire do fogo e polvilhe salsinha, se desejar."],
+  done: true,
+  world: world3
 )
 
 Ingredient.create!(
