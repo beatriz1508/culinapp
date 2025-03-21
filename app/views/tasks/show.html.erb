@@ -47,6 +47,10 @@
     </ul>
   </div>
 
+<!-- app/views/tasks/show.html.erb -->
+
+  <!-- Botão Trivia Game -->
+  <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button" %>
   <!-- Botão Completar -->
   <div class="complete-btn">
     <%= simple_form_for [@task, @review], data: {turbo: false} do |f| %>
