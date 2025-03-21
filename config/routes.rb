@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
 
+  resources :reviews, only: [:edit, :update, :index]
+  resource :profiles, only: :show
+  resources :questions, only: [:index, :create]
   resource :profiles, only: :show, as: :user_root
   resources :reviews, only: [:show, :update]
   get "ranking", to: "profiles#ranking", as: :ranking
@@ -28,6 +31,7 @@ Rails.application.routes.draw do
   get 'quiz/score', to: 'quiz#score'
   post 'quiz/result', to: 'quiz#result'
 
+  get "like", to: "reviews#like"
   # Defines the root path route ("/")
   root "paths#index"
 end
