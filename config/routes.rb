@@ -19,9 +19,11 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
 
-  resources :reviews, only: [:show, :update]
+  resources :reviews, only: [:edit, :update, :index]
   resource :profiles, only: :show
+  resources :questions, only: [:index, :create]
 
+  get "like", to: "reviews#like"
   # Defines the root path route ("/")
   root "paths#index"
 end
