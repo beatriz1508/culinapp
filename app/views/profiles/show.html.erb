@@ -12,19 +12,14 @@
       Profile de <%= current_user.username %>
 
 
-      <% @badges.each do |world_id, reviews| %>
-          <% if reviews == 5 %>
-          <%= image_tag asset_path(World.find(world_id).image_path), alt: "Le Wagon", width: 200 %>
-          <% end %>
-      <% end %>
+  <% @badges.each do |world_id, reviews| %>
+  <% if reviews == 5 %>
+    <% world = World.find(world_id) %>
+    <%= image_tag world.image_path, alt: "Badge de #{world.title}", width: 100 %>
+  <% end %>
+  <% end %>
 
 
-
-      <ul>
-        <% current_user.paths.each do |path| %>
-          <li><%= path.title %></li>
-        <% end %>
-      </ul>
 
       <div class="profile-actions">
         <%= link_to "Profile Edit", edit_user_registration_path, class: "edit-profile-button" %></div>
