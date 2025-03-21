@@ -1,0 +1,20 @@
+<h1>🏆 User Ranking by Completed Tasks (Reviews)</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>User Email</th>
+      <th>Tasks Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each_with_index do |user, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= user.email %></td>
+        <td><%= user.reviews.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
