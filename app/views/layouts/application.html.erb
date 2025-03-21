@@ -11,12 +11,19 @@
   </head>
 
   <body>
+    <% if current_page?(root_path) %>
+      <div data-controller="splash">
+        <div class="splash" data-splash-target="splash">
+          <%= image_tag "logo.svg", class: "splash-img" %>
+        </div>
+      </div>
+    <% end %>
   <% if user_signed_in? %>
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
 
-
     <%= yield %>
+
     <%= render "shared/footer" %>
   <% else %>
       <%= yield %>
