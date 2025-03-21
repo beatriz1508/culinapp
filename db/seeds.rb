@@ -7,6 +7,7 @@ World.destroy_all
 Path.destroy_all
 User.destroy_all
 
+
 # Creating Users and Profiles
 user1 = User.create!(
   email: "user1@example.com",
@@ -399,6 +400,19 @@ Journey.create!(
   user: user2,
   path: path2
 )
+
+# criando trivia
+q1 = Question.create!(content: 'What is 10/2?')
+q1.answers.create!(content: '5', correct: true)
+q1.answers.create!(content: '2', correct: false)
+q1.answers.create!(content: '8', correct: false)
+
+q2 = Question.create!(content: 'What is 30/3?')
+q2.answers.create!(content: '10', correct: true)
+q2.answers.create!(content: '5', correct: false)
+q2.answers.create!(content: '3', correct: false)
+
+
 
 # Exibindo informações para confirmar que o seeding foi bem-sucedido
 puts "Seed data successfully created!"

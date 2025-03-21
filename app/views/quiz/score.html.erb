@@ -1,0 +1,14 @@
+<h1>Your Answer was:</h1>
+
+<% if @result == "correct" %>
+  <h2 style="color: green;">✅ Correct!</h2>
+<% else %>
+  <h2 style="color: red;">❌ Incorrect.</h2>
+  <p>Your answer: <strong><%= @selected_answer || "No answer selected" %></strong></p>
+  <p>Correct answer: <strong><%= @correct_answer %></strong></p>
+<% end %>
+
+<br>
+
+<%= link_to "Play Again 🎮", quiz_path(return_to: @return_to), class: "button" %> |
+<%= link_to "Back", @return_to || root_path, class: "button" %>

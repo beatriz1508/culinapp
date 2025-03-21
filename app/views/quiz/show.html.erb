@@ -1,0 +1,18 @@
+<h1>Trivia Quiz</h1>
+
+<%= form_with url: quiz_result_path, method: :post do %>
+  <%= hidden_field_tag :return_to, @return_to %>
+  <h3><%= @question.content %></h3>
+
+  <% @question.answers.each do |answer| %>
+    <div>
+      <%= radio_button_tag "answer_id", answer.id, false, id: "answer_#{answer.id}" %>
+      <%= label_tag "answer_#{answer.id}", answer.content %>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag :question_id, @question.id %>
+
+  <br>
+  <%= submit_tag "Submit Answer" %>
+<% end %>
