@@ -1,0 +1,28 @@
+<div class="quiz-container">
+  <%= form_with url: quiz_result_path, method: :post, html: { class: "form" } do %>
+
+    <%= hidden_field_tag :return_to, @return_to %>
+
+    <h3 class="question-text"><%= @question.content %></h3>
+
+    <% @question.answers.each do |answer| %>
+      <div class="answer-option">
+        <label class="answer-label" for="answer_<%= answer.id %>">
+          <%= radio_button_tag "answer_id", answer.id, false, id: "answer_#{answer.id}", class: "answer-radio" %>
+          <%= answer.content %>
+        </label>
+      </div>
+    <% end %>
+
+    <%= hidden_field_tag :question_id, @question.id %>
+   <br>
+  <%= submit_tag "submit answer", class: "submit-button" %>
+<% end %>
+</div>
+
+ <!-- Chef Ilustração -->
+<div class="svg-container-quiz">
+  <div class="chef-icon">
+    <%= image_tag "chef_pasta.svg", class: "chef-image" %>
+    </div>
+</div>
