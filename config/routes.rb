@@ -21,9 +21,10 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: [:edit, :update, :index]
-  resource :profiles, only: :show
   resources :questions, only: [:index, :create]
   resource :profiles, only: :show, as: :user_root
+  post "upload_photo", to: "profiles#upload_photo", as: :upload_photo
+
   resources :reviews, only: [:show, :update]
   get "ranking", to: "profiles#ranking", as: :ranking
 
