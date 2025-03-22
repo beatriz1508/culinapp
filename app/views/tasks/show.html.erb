@@ -58,3 +58,11 @@
     <% end %>
   </div>
   <div class="btn-space"></div>
+
+  <!-- ChatBot ChefIA -->
+
+  <div id="chatbot-questions">
+    <%= render @chatbot_questions %>
+  </div>
+
+  <%= render "chatbot_questions/form", chatbot_question: @chatbot_question %> 

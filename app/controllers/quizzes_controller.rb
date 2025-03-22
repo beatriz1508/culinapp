@@ -1,5 +1,5 @@
 
-class QuizController < ApplicationController
+class QuizzesController < ApplicationController
   def show
     @question = Question.includes(:answers).order("RANDOM()").first
     @return_to = params[:return_to]

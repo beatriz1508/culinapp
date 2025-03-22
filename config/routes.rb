@@ -22,15 +22,17 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:edit, :update, :index]
   resources :questions, only: [:index, :create]
+  resource :profiles, only: :show
+  resources :chatbot_questions, only: [:index, :create]
   resource :profiles, only: :show, as: :user_root
   post "upload_photo", to: "profiles#upload_photo", as: :upload_photo
 
   resources :reviews, only: [:show, :update]
   get "ranking", to: "profiles#ranking", as: :ranking
 
-  get 'quiz', to: 'quiz#show'
-  get 'quiz/score', to: 'quiz#score'
-  post 'quiz/result', to: 'quiz#result'
+  get 'quiz', to: 'quizzes#show'
+  get 'quiz/score', to: 'quizzes#score'
+  post 'quiz/result', to: 'quizzes#result'
 
   get "like", to: "reviews#like"
   # Defines the root path route ("/")

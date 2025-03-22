@@ -162,6 +162,7 @@
 .svg-container{
   display: grid;
   grid-template-columns: 5fr 4fr;
+  z-index: 10000;
 }
 
 .btn-space{
