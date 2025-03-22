@@ -1,26 +1,48 @@
-<div class="main-show-profile-container"></div>
-  <div class="show-profile-container">
-
+<div class="main-show-profile-container">
+  <div class="profile-header">
+    <div class="profile-avatar-container">
       <% if current_user.avatar.present? %>
         <%= image_tag(current_user.avatar, alt: 'Avatar', class: 'profile-avatar') %>
       <% else %>
         <%= image_tag(asset_path('default_avatar.svg'), alt: 'Default Avatar', class: 'profile-avatar') %>
       <% end %>
-
-
-
-      Profile de <%= current_user.username %>
-
-
-  <% @badges.each do |world_id, reviews| %>
-  <% if reviews == 5 %>
-    <% world = World.find(world_id) %>
-    <%= image_tag world.image_path, alt: "Badge de #{world.title}", width: 100 %>
-  <% end %>
-  <% end %>
-
-
-
-      <div class="profile-actions">
-        <%= link_to "Profile Edit", edit_user_registration_path, class: "edit-profile-button" %></div>
     </div>
+
+    <div class="profile-info">
+      <h2 class="profile-username"><%= current_user.username %></h2>
+      <%= link_to "Profile Edit", edit_user_registration_path, class: "edit-profile-button" %></div>
+    </div>
+  </div>
+
+    <div class="badges-container">
+      <% @badges.each do |world_id, reviews| %>
+        <% if reviews == 5 %>
+          <% world = World.find(world_id) %>
+          <div class="badge">
+            <%= image_tag world.image_path, alt: "#{world.title}'s Badge", class: "badge-image"%>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+<!-- Formulário de upload de foto -->
+<%= form_with url: upload_photo_path, method: :post, local: true, html: { enctype: 'multipart/form-data' } do |form| %>
+  <%= form.file_field :photos, accept: "image/*", capture: "camera", multiple: true %>
+  <%= form.submit "Enviar Foto", class: "upload-button" %>
+<% end %>
+
+
+  <!-- Galeria de fotos -->
+  <div class="gallery">
+  <% @user_photos.each do |photo| %>
+    <div class="photo-item">
+  <% if photo.image.attached? %>
+    <%= image_tag photo.image, alt: "#{current_user.username}'s Photo", class: "photo" %>
+<% end %>    </div>
+  <% end %>
+</div>
+
+
+
+
+</div>
