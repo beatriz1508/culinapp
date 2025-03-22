@@ -18,7 +18,8 @@ Review.destroy_all
 Path.destroy_all
 User.destroy_all
 
-# Criando usuários
+
+# Creating Users and Profiles
 user1 = User.create!(
   email: "user1@example.com",
   password: "password123",
@@ -3799,10 +3800,6 @@ Journey.create!(
   path: path1
 )
 
-Journey.create!(
-  user: user2,
-  path: path2
-)
 
 # Exibindo informações para confirmar que o seeding foi bem-sucedido
 puts "Seed data successfully created!"

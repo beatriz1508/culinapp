@@ -1,4 +1,4 @@
-# This configuration file will be evaluated by Puma. The top-level methods that
+  # This configuration file will be evaluated by Puma. The top-level methods that
 # are invoked here are part of Puma's configuration DSL. For more information
 # about methods provided by the DSL, see https://puma.io/puma/Puma/DSL.html.
 
@@ -26,6 +26,10 @@ if rails_env == "production"
   else
     preload_app!
   end
+end
+
+if ENV['RAILS_ENV'] == 'development'
+  plugin :solid_queue
 end
 # Specifies the `worker_timeout` threshold that Puma will use to wait before
 # terminating a worker in development environments.
