@@ -11,5 +11,11 @@ export default class extends Controller {
   play() {
     console.log("Olá mundo")
     this.audioTarget.play()
+
+    event.preventDefault();
+    this.audioTarget.addEventListener("ended", () => {
+      this.element.querySelector("form").submit(); 
+    });
   }
+
 }
