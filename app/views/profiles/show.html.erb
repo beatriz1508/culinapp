@@ -10,39 +10,36 @@
 
     <div class="profile-info">
       <h2 class="profile-username"><%= current_user.username %></h2>
-      <%= link_to "Profile Edit", edit_user_registration_path, class: "edit-profile-button" %></div>
-    </div>
+      <%= link_to "Profile Edit", edit_user_registration_path, class: "edit-profile-button" %>
+    </div> <!-- Fechando corretamente profile-info -->
+
+  </div> <!-- Fechando profile-header -->
+
+  <div class="badges-container">
+    <% @badges.each do |world_id, reviews| %>
+      <% if reviews == 5 %>
+        <% world = World.find(world_id) %>
+        <div class="badge">
+          <%= image_tag world.image_path, alt: "#{world.title}'s Badge", class: "badge-image"%>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
-    <div class="badges-container">
-      <% @badges.each do |world_id, reviews| %>
-        <% if reviews == 5 %>
-          <% world = World.find(world_id) %>
-          <div class="badge">
-            <%= image_tag world.image_path, alt: "#{world.title}'s Badge", class: "badge-image"%>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-
-<!-- Formulário de upload de foto -->
-<%= form_with url: upload_photo_path, method: :post, local: true, html: { enctype: 'multipart/form-data' } do |form| %>
-  <%= form.file_field :photos, accept: "image/*", capture: "camera", multiple: true %>
-  <%= form.submit "Enviar Foto", class: "upload-button" %>
-<% end %>
-
+  <!-- Formulário de upload de foto -->
+  <%= form_with url: upload_photo_path, method: :post, local: true, html: { enctype: 'multipart/form-data' } do |form| %>
+    <%= form.file_field :photos, accept: "image/*", capture: "camera", multiple: true %>
+    <%= form.submit "Enviar Foto", class: "upload-button" %>
+  <% end %>
 
   <!-- Galeria de fotos -->
   <div class="gallery">
-  <% @user_photos.each do |photo| %>
-    <div class="photo-item">
-  <% if photo.image.attached? %>
-    <%= image_tag photo.image, alt: "#{current_user.username}'s Photo", class: "photo" %>
-<% end %>    </div>
-  <% end %>
-</div>
-
-
-
-
-</div>
+    <% @user_photos.each do |photo| %>
+      <div class="photo-item">
+        <% if photo.image.attached? %>
+          <%= image_tag photo.image, alt: "#{current_user.username}'s Photo", class: "photo" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div> 
