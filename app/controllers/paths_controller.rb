@@ -33,6 +33,27 @@ class PathsController < ApplicationController
   def show
     @path = Path.find(params[:id])
     @worlds = World.where(path: params[:id])
+
+    @worlds.each_with_index do |world, index|
+      previous_world_completed = index.zero? || @worlds[index - 1].tasks.all? { |task| current_user.reviews.exists?(task: task) }
+      world.define_singleton_method(:locked?) { !previous_world_completed }
+
+      # Adicionando a lógica para determinar a imagem de cada mundo
+      world.define_singleton_method(:image_for_world) do
+        case world.title.downcase
+        when "brazil" then "world1.svg"
+        when "south america" then "world2.svg"
+        when "north america" then "world3.svg"
+        when "europe" then "world4.svg"
+        when "mediterranean" then "world5.svg"
+        when "asia" then "world6.svg"
+        when "brazil" then "world7.svg"
+        when "north america" then "world8.svg"
+        when "europe" then "world9.svg"
+        else "default-world.svg"
+        end
+      end
+    end
   end
 
   def destroy
