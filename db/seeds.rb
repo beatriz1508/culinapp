@@ -36,16 +36,16 @@ path2 = Path.create!(
 
 # Creating Worlds
 world1 = World.create!(title: "Brazil", done: true, path: path1, image_path: "badge1.svg")
-world2 = World.create!(title: "South America", done: true, path: path1, image_path: "badge1.svg")
-world3 = World.create!(title: "North America", done: true, path: path1, image_path: "badge1.svg")
-world4 = World.create!(title: "Europe", done: false, path: path1, image_path: "badge1.svg")
-world5 = World.create!(title: "Mediterranean", done: false, path: path1, image_path: "badge1.svg")
-world6 = World.create!(title: "Asia", done: false, path: path1, image_path: "badge1.svg")
+world2 = World.create!(title: "South America", done: true, path: path1, image_path: "badge2.svg")
+world3 = World.create!(title: "North America", done: true, path: path1, image_path: "badge3.svg")
+world4 = World.create!(title: "Europe", done: false, path: path1, image_path: "badge4.svg")
+world5 = World.create!(title: "Mediterranean", done: false, path: path1, image_path: "badge5.svg")
+world6 = World.create!(title: "Asia", done: false, path: path1, image_path: "badge6.svg")
 
-world7 = World.create!(title: "Brazil", done: false, path: path2, image_path: "badge1.svg")
-world8 = World.create!(title: "North America", done: true, path: path2, image_path: "badge1.svg")
-world9 = World.create!(title: "Europe", done: true, path: path2, image_path: "badge1.svg")
-world10 = World.create!(title: "Sobremesas", done: true, path: path2, )
+world7 = World.create!(title: "Brazil", done: false, path: path2, image_path: "badge7.svg")
+world8 = World.create!(title: "North America", done: true, path: path2, image_path: "badge8.svg")
+world9 = World.create!(title: "Europe", done: true, path: path2, image_path: "badge9.svg")
+world10 = World.create!(title: "Sobremesas", done: true, path: path2, image_path: "badge10.svg")
 
 # Creating Tasks
 tasks = [
