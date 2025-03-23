@@ -1,37 +1,29 @@
-
-<%# <h6><%= @path.title %>
-<%# <p><%= @path.description</p> %>
-
 <div class="world-container">
   <% @worlds.each do |world| %>
-    <div class="world-card">
+    <div class="world-card <%= 'locked' if world.locked? %>">
       <div class="element-2">
-        <%= link_to world_path(world), class: "world-title-link" do %>
-          <span class="world-title"><%= world.title %></span>
+        <% unless world.locked? %>
+          <%= link_to world_path(world), class: "world-title-link" do %>
+            <span class="world-title"><%= world.title %></span>
+          <% end %>
+        <% else %>
+          <span class="world-title locked-text"><%= world.title %></span>
         <% end %>
-        <span class="lock-icon">🔒</span>
+
+        <div class="lock-small">
+          <% if world.locked? %>
+            <i class="fas fa-lock"></i> <!-- Ícone de cadeado fechado -->
+          <% else %>
+            <i class="fas fa-lock-open"></i> <!-- Ícone de cadeado aberto -->
+          <% end %>
+        </div>
       </div>
 
-      <!-- border detail -->
       <span class="thin-band"></span>
-
       <div class="world-image">
-        <%= image_tag "world-1.svg", alt: world.title %>
-      </div>
+       <%= image_tag world.image_for_world, alt: world.title %>
+     </div>
+
     </div>
   <% end %>
 </div>
-
-<%#
-# ------>>>>> codigo antigo comentado <<<<<---------%>
-<%# <h1><%= @path.title</h1>
-<%# <p><%= @path.description %>
-
-<%# index de world %>
-<%# <% @worlds.each do |world| %>
-  <%# <ul>
-    <li><%= world.id %>
-    <%# <li><%= world.title %>
-    <%# <%= link_to "Play", world_path(world) %>
-  <%# </ul>
-<% end %>
