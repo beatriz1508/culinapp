@@ -53,10 +53,11 @@
   <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button" %>
   <%= link_to "🧑🏽‍🍳 ChefIA", questions_path(return_to: task_path(@task)), class: "button" %>
   <!-- Botão Completar -->
-  <div class="complete-btn">
-    <%= simple_form_for [@task, @review], data: {turbo: false} do |f| %>
+  <div data-controller="sound" class="complete-btn">
+    <%= simple_form_for [@task, @review], data: { turbo: false, action: "submit->sound#play" } do |f| %>
       <%= f.submit "Complete", class: "button" %>
     <% end %>
+    <audio data-sound-target="audio" src="<%= asset_path("beep.mp3") %>"></audio>
   </div>
   <div class="btn-space"></div>
 

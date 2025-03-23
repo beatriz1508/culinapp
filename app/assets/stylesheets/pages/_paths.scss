@@ -1,0 +1,19 @@
+.world-card.locked {
+  filter: grayscale(100%); /* Deixa o card cinza */
+  pointer-events: none; /* Impede cliques */
+  opacity: 0.5;
+}
+
+.locked-text {
+  color: gray; /* Deixa o texto apagado */
+}
+
+.lock-small i {
+  color: red; /* Deixa o cadeado vermelho para indicar bloqueio */
+}
+
+.world-card.locked {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  pointer-events: none; /* Impede clique nos mundos bloqueados */
+}
