@@ -402,16 +402,15 @@ Journey.create!(
 )
 
 # criando trivia
-q1 = Question.create!(content: 'What is 10/2?')
-q1.answers.create!(content: '5', correct: true)
-q1.answers.create!(content: '2', correct: false)
-q1.answers.create!(content: '8', correct: false)
+q1 = QuizQuestion.create!(content: 'What is 10/2?')
+q1.quiz_answers.create!(content: '5', correct: true)
+q1.quiz_answers.create!(content: '2', correct: false)
+q1.quiz_answers.create!(content: '8', correct: false)
 
-q2 = Question.create!(content: 'What is 30/3?')
-q2.answers.create!(content: '10', correct: true)
-q2.answers.create!(content: '5', correct: false)
-q2.answers.create!(content: '3', correct: false)
-
+q2 = QuizQuestion.create!(content: 'What is 30/3?')
+q2.quiz_answers.create!(content: '10', correct: true)
+q2.quiz_answers.create!(content: '5', correct: false)
+q2.quiz_answers.create!(content: '3', correct: false)
 
 
 # Exibindo informações para confirmar que o seeding foi bem-sucedido

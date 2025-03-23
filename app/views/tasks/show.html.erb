@@ -51,6 +51,7 @@
 
   <!-- Botão Trivia Game -->
   <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button" %>
+  <%= link_to "🧑🏽‍🍳 ChefIA", questions_path(return_to: task_path(@task)), class: "button" %>
   <!-- Botão Completar -->
   <div class="complete-btn">
     <%= simple_form_for [@task, @review], data: {turbo: false} do |f| %>
@@ -61,8 +62,4 @@
 
   <!-- ChatBot ChefIA -->
 
-  <div id="chatbot-questions">
-    <%= render @chatbot_questions %>
-  </div>
-
-  <%= render "chatbot_questions/form", chatbot_question: @chatbot_question %> 
+  <!-- Botão Completar -->
