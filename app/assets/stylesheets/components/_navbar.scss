@@ -5,7 +5,7 @@
   padding: 1% 2%;
   background-color: white;
   border-bottom: 1px solid #ddd;
-  
+
 }
 
 .navbar-brand {
@@ -20,7 +20,7 @@
   border-radius: 50%;
 }
 
-.curent-user {
+.current-user {
   margin: 0;
   font-size: 16px;
   font-weight: bold;
@@ -34,17 +34,9 @@
   align-items: center;
 }
 
-.icon-container .nmbr-stars {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: #f5a623;
-}
-
-.icon-container .star {
-  margin-left: 2%;
-  font-size: 18px;
-  color: #f5a623;
+.icon-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 4%;
+  margin-top: 4%;
 }
