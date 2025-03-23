@@ -57,12 +57,16 @@
       <%= f.submit "Complete", class: "button" %>
     <% end %>
   </div>
+  <div data-controller="sound">
+    <button data-action="click->sound#play">Reproduzir Som</button>
+    <audio data-sound-target="audio" src="<%= asset_path("beep.mp3") %>"></audio>
+  </div>
   <div class="btn-space"></div>
 
   <!-- ChatBot ChefIA -->
 
   <div id="chatbot-questions">
-    <%= render @chatbot_questions %>
+    <%# <%= render @chatbot_questions %> %>
   </div>
 
-  <%= render "chatbot_questions/form", chatbot_question: @chatbot_question %> 
+  <%= render "chatbot_questions/form", chatbot_question: @chatbot_question %>
