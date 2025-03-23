@@ -5,4 +5,22 @@
   gap: 30px;
   margin-top: 70px;
   margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.background-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: asset-url("background.svg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.trail-card:nth-child(2) {
+  margin-top: 100px;
 }

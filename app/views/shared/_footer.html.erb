@@ -1,57 +1,31 @@
-
-  <%# TODO Implementar a lógica dos botões do footer, exemplo nas linhas 5 e 31 %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="footer-container">
-    <% if controller_name == "paths" && action_name == "index" %>
-      <p class="active">
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-house"></i>
-        <% end %>
-      </p>
+    <!-- Página Inicial -->
+    <p class="<%= 'active' if current_page?(root_path) %>">
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-house"></i> <!-- Ícone de Casa -->
+      <% end %>
+    </p>
 
-      <p>
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-share-nodes"></i>
-        <% end %>
-      </p>
+    <!-- Página de Compartilhamento -->
+    <p class="<%= 'active' if current_page?(root_path) %>">
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-share-nodes"></i> <!-- Ícone de Compartilhamento -->
+      <% end %>
+    </p>
 
-      <p>
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-newspaper"></i>
-        <% end %>
-      </p>
+    <!-- Página de Notícias -->
+    <p class="<%= 'active' if current_page?(root_path) %>">
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-newspaper"></i> <!-- Ícone de Notícias -->
+      <% end %>
+    </p>
 
-      <p>
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-user"></i>
-        <% end %>
-      </p>
-
-
-    <% else %>
-      <p>
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-house"></i>
-        <% end %>
-      </p>
-
-      <p>
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-share-nodes"></i>
-        <% end %>
-      </p>
-
-      <p>
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-newspaper"></i>
-        <% end %>
-      </p>
-
-      <p>
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-user"></i>
-        <% end %>
-      </p>
-    <% end %>
+    <!-- Página de Perfil -->
+    <p class="<%= 'active' if current_page?(user_root_path) %>">
+      <%= link_to user_root_path do %>
+        <i class="fa-solid fa-user"></i> <!-- Ícone de Usuário -->
+      <% end %>
+    </p>
   </div>
 </div>
