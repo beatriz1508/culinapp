@@ -4,7 +4,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @review = Review.new
     @ingredients = Ingredient.where(task: @task.id)
-    @chatbot_question = ChatbotQuestion.new
+    @question = Question.new
   end
 
   def update

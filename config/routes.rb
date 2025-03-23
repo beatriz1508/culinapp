@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :reviews, only: [:edit, :update, :index]
   resources :questions, only: [:index, :create]
   resource :profiles, only: :show
-  resources :chatbot_questions, only: [:index, :create]
+  resources :questions, only: [:index, :create]
   resource :profiles, only: :show, as: :user_root
   post "upload_photo", to: "profiles#upload_photo", as: :upload_photo
 
