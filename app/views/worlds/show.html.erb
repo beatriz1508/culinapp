@@ -11,7 +11,7 @@
   <% else %>
     <div class="completed-card">
       <div class="text-container">
-        <span class="first-text"> World Completed</span>
+        <span class="first-text"> <%= link_to "World Completed - click to go back", path_path(@world.path), class: "bk-btn" %></span>
       </div>
       <% if @world.icon_path.present? %>
         <%= image_tag @world.icon_path, class: "tomato-image", alt: @world.title %>
@@ -19,6 +19,8 @@
     </div>
   <% end %>
 </div>
+
+
 
 
   <div class="invert-task">
