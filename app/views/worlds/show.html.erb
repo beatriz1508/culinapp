@@ -9,11 +9,13 @@
     <% else %>
     <div class="completed-card">
       <div class="text-container">
-        <span class="first-text"> World Completed</span>
+        <span class="first-text"> <%= link_to "World Completed - click to go back", path_path(@world.path), class: "bk-btn" %></span>
       </div>
       <%= image_tag "corn.svg", class: "tomato-image" %>
     </div>
     <% end %>
+
+
 
 
 
