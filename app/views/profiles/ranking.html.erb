@@ -1,6 +1,6 @@
 <div class="competition-summary">
   <div class="user-avatar">
-    <%= image_tag(current_user.avatar.presence || "avatar02.svg", class: "avatar") %>
+    <%= image_tag(current_user.avatar.presence || "default_avatar.svg", class: "avatar") %>
   </div>
 
   <div class="user-rank-info">
@@ -26,8 +26,8 @@
       <tr class="<%= rank_class_for(index) %>">
         <td><%= index + 1 %></td>
         <td class="user-info">
-          <%= image_tag(user.avatar.presence || "avatar02.svg", class: "avatar") %>
-          <span class="user-email"><%= user.email %></span>
+          <%= image_tag(user.avatar.presence || "default_avatar.svg", class: "avatar") %>
+          <span class="user-email"><%= user.username %></span>
         </td>
         <td><%= user.reviews.count %></td>
       </tr>
@@ -51,8 +51,8 @@
       <tr class="<%= rank_class_for(index) %>">
         <td><%= index + 1 %></td>
         <td class="user-info">
-          <%= image_tag(user.avatar.presence || "avatar02.svg", class: "avatar") %>
-          <span class="user-email"><%= user.email %></span>
+          <%= image_tag(user.avatar.presence || "default_avatar.svg", class: "avatar") %>
+          <span class="user-email"><%= user.username %></span>
         </td>
         <td><%= badge_count_for(user) %></td>
       </tr>
