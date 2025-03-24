@@ -1,47 +1,61 @@
-<div class="ranking-container">
-
-  <div class="competition-summary">
-    <div class="leader">🥇 Leader: <strong><%= @users.first.email %></strong> - <%= @users.first.reviews.count %> Tasks</div>
-    <div class="your-score">You: <strong><%= current_user.reviews.count %></strong> Tasks</div>
-    <div class="days-left">⏳ 43 days remaining</div>
+<div class="competition-summary">
+  <div class="user-avatar">
+    <%= image_tag(current_user.avatar.presence || "avatar02.svg", class: "avatar") %>
   </div>
 
-    <!-- Title OUTSIDE the table -->
-  <div class="table-title"> Recipes Ranking</div>
-
-
-  <table>
-    <thead>
-      <!-- Column Headers -->
-      <tr>
-        <th>rank</th>
-        <th>user</th>
-        <th>recipes</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @users.each_with_index do |user, index| %>
-        <% rank_class = case index
-          when 0 then "first-place"
-          when 1 then "second-place"
-          when 2 then "third-place"
-          else ""
-        end %>
-        <tr class="<%= rank_class %>">
-          <td class="rank">
-            <% if index == 0 %>🥇<% elsif index == 1 %>🥈<% elsif index == 2 %>🥉<% else %><%= index + 1 %><% end %>
-          </td>
-          <td class="user-info">
-            <div class="avatar">
-              <%= image_tag(user.avatar || "avatar01.svg", alt: "User Avatar") %>
-            </div>
-            <span class="user-email"><%= user.email %></span>
-          </td>
-          <td><%= user.reviews.count %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
+  <div class="user-rank-info">
+    <div class="your-score">✅ You are currently <strong><%= @current_user_recipe_rank %>º</strong> in Recipes with <strong><%= current_user.reviews.count %></strong> Tasks</div>
+    <div class="your-score">🎖️ You are <strong><%= @current_user_badge_rank %>º</strong> in Badges with <strong><%= badge_count_for(current_user) %></strong> Badges</div>
+  </div>
 </div>
+
+<!-- Recipes Ranking Title OUTSIDE the table -->
+<div class="table-title">Recipes Ranking</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>User</th>
+      <th>Recipes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each_with_index do |user, index| %>
+      <tr class="<%= rank_class_for(index) %>">
+        <td><%= index + 1 %></td>
+        <td class="user-info">
+          <%= image_tag(user.avatar.presence || "avatar02.svg", class: "avatar") %>
+          <span class="user-email"><%= user.email %></span>
+        </td>
+        <td><%= user.reviews.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="table-title">Badges Ranking</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>User</th>
+      <th>Badges</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users_badges_ranking.each_with_index do |user, index| %>
+      <tr class="<%= rank_class_for(index) %>">
+        <td><%= index + 1 %></td>
+        <td class="user-info">
+          <%= image_tag(user.avatar.presence || "avatar02.svg", class: "avatar") %>
+          <span class="user-email"><%= user.email %></span>
+        </td>
+        <td><%= badge_count_for(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
