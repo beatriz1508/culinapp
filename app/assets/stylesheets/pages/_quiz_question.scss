@@ -1,58 +1,78 @@
-/* Page Container to center the form */
 .quiz-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative; /* Needed to control stacking context */
-  z-index: 1;
+  max-width: 500px;
+  height: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f79b28;
+  border-radius: 12px;
+  text-align: center;
 }
 
-/* Form Container */
-.form {
-  width: 414px;
-  min-height: 148px;
-  background-color: #FF9B05;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  border: none;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: auto;
-  position: relative;
+.question-image {
+  max-width: 100%;      /* Fully responsive */
+  height: auto;         /* Maintains original aspect ratio */
+  display: block;
+  margin-bottom: 16px;  /* Space between image and question */
+  border-radius: 8px;
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.answers-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 10px;
+  gap: 10px;
+  padding: 0 30px; /* Adds horizontal spacing between answers and container border */
 }
 
-/* Submit Button */
-.submit-button {
-  width: 150px;
-  height: 30px;
-  background-color: #FFFFFF;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Montserrat', sans-serif;
+.answer-option {
+  background-color: #fff;
+  color: #f79b28;
   font-weight: 600;
-  font-size: 15px;
-  color: #FF9B05;
-  text-align: center;
-  margin-bottom: 0px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  font-size: 12px;          /* Increased from 8px for better readability */
+  text-transform: case;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.svg-container-quiz{
-  position: absolute;
-  bottom: 250px;   /* Distance from bottom */
-  left: 20px;     /* Distance from left */
-  z-index: 10;
+.answer-option:hover {
+  background-color: #FFB38E;
+  color: #fff;
+}
+
+.answer-radio {
+  display: none;
+}
+
+.answer-radio:checked + span {
+  background-color: #f79b28;
+  color: #fff;
+}
+
+.submit-button {
+  background-color: #fff;
+  color: #f79b28;
+  font-weight: 400;
+  border: none;
+  padding: 5px 20px;       /* More balanced padding */
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-transform: downcase;
+  font-size: 10px;          /* Increased from 8px */
+  width: 60%;               /* Looks better and scales */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #dbb485;
+  color: #fff;
+  border: 1px solid #fff;
 }
