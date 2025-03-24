@@ -22,12 +22,14 @@ World.destroy_all
 
 # Creating Users and Profiles
 user1 = User.create!(
+  username: "qwserty",
   email: "user1@example.com",
   password: "password123",
   password_confirmation: "password123"
 )
 
 user2 = User.create!(
+  username: "qwserty",
   email: "user2@example.com",
   password: "password123",
   password_confirmation: "password123"
