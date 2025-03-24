@@ -103,6 +103,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_24_175132) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
   end
 
   create_table "reviews", force: :cascade do |t|
