@@ -1,10 +1,21 @@
 <div class="tasks-container">
+    <% if @tasks_comleted.empty? == true %>
   <div class="task-card">
     <div class="text-container">
       <span class="first-text"> World: <%= @world.title %></span>
     </div>
-  <%= image_tag "corn.svg", class: "tomato-image" %>
+      <%= image_tag "corn.svg", class: "tomato-image" %>
   </div>
+    <% else %>
+    <div class="completed-card">
+      <div class="text-container">
+        <span class="first-text"> World Completed</span>
+      </div>
+      <%= image_tag "corn.svg", class: "tomato-image" %>
+    </div>
+    <% end %>
+
+
 
   <div class="invert-task">
     <% @tasks.each do |task| %>
