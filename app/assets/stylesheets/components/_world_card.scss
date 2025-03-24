@@ -21,7 +21,7 @@
   flex-direction: column; /* vertically align title and lock */
   align-items: flex-start;
   justify-content: center;
-  padding-left: 20px; /* Add padding for neat spacing */
+  padding-left: 20px; 
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
 }
@@ -82,24 +82,24 @@
 
 .world-title-link {
   text-decoration: none;
-  color: white; /* adjust to your desired color */
-  text-align: left; /* aligns the text to the left */
-  display: block; /* ensures the text-align takes effect */
+  color: white;
+  text-align: left;
+  display: block;
   width: 100%;
 }
 
 .world-title {
   font-size: 10px;
   font-weight: 400;
-  display: inline-block; /* ensures consistent alignment */
+  display: inline-block;
 }
 
 .world-container {
   display: flex;
   flex-direction: column;
-  align-items: center;      /* Centers cards horizontally */
-  justify-content: center;  /* Centers vertically if needed */
-  gap: 10px;                /* Adds consistent vertical spacing between cards */
-  width: 100%;              /* Full width for flexible responsiveness */
-  padding: 20px 0;          /* Optional vertical padding for spacing from top/bottom */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 0;
 }
