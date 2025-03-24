@@ -54,6 +54,13 @@
 
 <!-- app/views/tasks/show.html.erb -->
   <!-- Botão Trivia Game -->
+  <div class="tsk-btn">
+    <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button-gray" %>
+    <%= link_to questions_path(return_to: task_path(@task)), class: "button-gray" do %>
+  <%= image_tag("chatbot.svg", alt: "ChefIA Logo", class: "chatbot-icon-mini") %>
+  ChefIA
+  <% end %>
+  </div>
 
   <!-- Botão Completar -->
   <div data-controller="sound" class="complete-btn">
