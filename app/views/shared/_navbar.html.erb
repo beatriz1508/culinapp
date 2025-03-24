@@ -5,6 +5,7 @@
         <%= image_tag(current_user.avatar.presence || "avatar06.svg", class: "avatar", alt: "User Avatar") %>
       <% end %>
       <h6 class="current-user">Hello, <%= current_user.username %></h6>
+      <%= link_to "Sign-out", destroy_user_session_path, class: "sign-out", data: { turbo_method: :delete } %>
     <% else %>
       <%= link_to "#", class: "navbar-brand" do %>
         <%= image_tag("default_avatar.png", class: "avatar", alt: "Default Avatar") %>
