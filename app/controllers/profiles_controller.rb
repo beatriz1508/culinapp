@@ -20,21 +20,18 @@ class ProfilesController < ApplicationController
 
   def show
     @badges = current_user.reviews.joins(task: :world).group("worlds.id").count
-    @user_photos = current_user.photos.with_attached_image
   end
 
-  def destroy
+  def update
+    current_user.photos.attach(params[:user][:photos]) if params[:user][:photos].present? # Adiciona sem apagar as antigas
+
+    redirect_to user_root_path, notice: "Foto enviada com sucesso!"
   end
 
-  def upload_photo
-    if params[:photos].present?
-      params[:photos].each do |photo|
-        current_user.photos.create(image: photo)
-      end
-      redirect_to user_root_path, notice: "Foto enviada com sucesso!"
-    else
-      redirect_to user_root_path, alert: "Erro ao enviar foto."
-    end
+  private
+
+  def user_params
+    params.require(:user).permit(photos: [])
   end
 
 end

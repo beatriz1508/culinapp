@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   resource :profiles, only: :show
   resources :questions, only: [:index, :create]
   resource :profiles, only: :show, as: :user_root
-  post "upload_photo", to: "profiles#upload_photo", as: :upload_photo
+  resources :profiles, only: :update
+
 
   resources :reviews, only: [:show, :update]
   get "ranking", to: "profiles#ranking", as: :ranking
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
   get 'quiz', to: 'quizzes#show'
   get 'quiz/score', to: 'quizzes#score'
   post 'quiz/result', to: 'quizzes#result'
-  
+
 
   get "like", to: "reviews#like"
   # Defines the root path route ("/")
