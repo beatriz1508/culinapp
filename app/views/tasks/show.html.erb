@@ -48,10 +48,11 @@
   </div>
 
 <!-- app/views/tasks/show.html.erb -->
-
   <!-- Botão Trivia Game -->
-  <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button" %>
-  <%= link_to "🧑🏽‍🍳 ChefIA", questions_path(return_to: task_path(@task)), class: "button" %>
+  <div class="tsk-btn">
+    <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button-gray" %>
+    <%= link_to "🧑🏽‍🍳 ChefIA", questions_path(return_to: task_path(@task)), class: "button-gray" %>
+  </div>
   <!-- Botão Completar -->
   <div data-controller="sound" class="complete-btn">
     <%= simple_form_for [@task, @review], data: { turbo: false, action: "submit->sound#play" } do |f| %>
