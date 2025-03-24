@@ -1,0 +1,22 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="navbar-container">
+    <% if user_signed_in? %>
+      <%= link_to(request.referer || user_root_path, class: "navbar-brand") do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+      <h6 class="current-user">Hello, <%= current_user.username %></h6>
+    <% else %>
+      <%= link_to(request.referer || user_root_path, class: "navbar-brand") do %>
+        <i class="fa-solid fa-arrow-left"></i>
+      <% end %>
+      <h6 class="current-user">Hello, Guest</h6>
+    <% end %>
+
+    <!-- ✅ Icon container stays inside navbar and aligned -->
+    <div class="icon-container">
+      <%= link_to user_root_path, class: "navbar-brand" do %>
+        <%= image_tag(current_user.avatar.presence || "avatar06.svg", class: "avatar", alt: "User Avatar") %>
+      <% end %>
+    </div>
+  </div>
+</div>
