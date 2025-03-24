@@ -11,14 +11,14 @@
 
 # Remover todos os dados existentes para evitar duplicações
 Review.destroy_all
+Path.destroy_all
+Photo.destroy_all
 Question.destroy_all
 Journey.destroy_all
 User.destroy_all
 Ingredient.destroy_all
 Task.destroy_all
 World.destroy_all
-Path.destroy_all
-
 
 # Creating Users and Profiles
 user1 = User.create!(
@@ -49,63 +49,72 @@ world1 = World.create!(
   title: "Brazil",
   done: true,
   path: path1,
-  image_path: "badge1.svg"
+  image_path: "badge1.svg",
+  icon_path: "world1.svg"
 )
 
 world2 = World.create!(
   title: "South America",
   done: true,
   path: path1,
-  image_path: "badge2.svg"
+  image_path: "badge2.svg",
+  icon_path: "world2.svg"
 )
 
 world3 = World.create!(
   title: "North America",
   done: true,
   path: path1,
-  image_path: "badge3.svg"
+  image_path: "badge3.svg",
+  icon_path: "world3.svg"
 )
 
 world4 = World.create!(
   title: "Europe",
   done: false,
   path: path1,
-  image_path: "badge4.svg"
+  image_path: "badge4.svg",
+  icon_path: "world4.svg"
 )
 
 world5 = World.create!(
   title: "Mediterranean",
   done: false,
   path: path1,
-  image_path: "badge5.svg"
+  image_path: "badge5.svg",
+  icon_path: "world5.svg"
 )
 
 world6 = World.create!(
   title: "Asia",
   done: false,
   path: path1,
-  image_path: "badge6.svg"
+  image_path: "badge6.svg",
+  icon_path: "world6.svg"
 )
 
 world7 = World.create!(
   title: "Brazil",
   done: true,
   path: path2,
-  image_path: "badge7.svg"
+  image_path: "badge7.svg",
+  icon_path: "world7.svg"
 )
 
 world8 = World.create!(
   title: "North America",
   done: true,
   path: path2,
-  image_path: "badge8.svg"
+  image_path: "badge8.svg",
+  icon_path: "world8.svg"
 )
 
 world9 = World.create!(
   title: "Europe",
   done: true,
   path: path2,
-  image_path: "badge9.svg"
+  image_path: "badge9.svg",
+  icon_path: "world9.svg"
 )
 
 # Criando tarefas (tasks) associadas a mundos

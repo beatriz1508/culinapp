@@ -14,16 +14,24 @@
           <% if world.locked? %>
             <i class="fas fa-lock"></i> <!-- Ícone de cadeado fechado -->
           <% else %>
-            <i class="fas fa-lock-open"></i> <!-- Ícone de cadeado aberto -->
+            <% # Aqui é onde vamos verificar se as 5 reviews foram completadas %>
+            <% completed_reviews = world.tasks.sum { |task| task.reviews.where(user: current_user).count } %>
+
+            <% if completed_reviews >= 5 %>  <!-- Se já tiver 5 reviews -->
+              <i class="fas fa-star" style="color: #0FA3B1;"></i> <!-- Ícone de estrela dourada -->
+            <% else %>
+              <i class="fas fa-lock-open" style="color: orange;"></i> <!-- Ícone de cadeado aberto -->
+            <% end %>
           <% end %>
         </div>
       </div>
 
       <span class="thin-band"></span>
       <div class="world-image">
-       <%= image_tag world.image_for_world, alt: world.title %>
-     </div>
-
+        <% if world.icon_path.present? %>
+          <%= image_tag world.icon_path, alt: world.title %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
