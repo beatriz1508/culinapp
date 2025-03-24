@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get 'quiz', to: 'quizzes#show'
   get 'quiz/score', to: 'quizzes#score'
   post 'quiz/result', to: 'quizzes#result'
+  
 
   get "like", to: "reviews#like"
   # Defines the root path route ("/")

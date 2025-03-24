@@ -10,6 +10,18 @@ class WorldsController < ApplicationController
       else
         @next_task = @tasks.first
       end
+
+    @paths = Path.all
+    @tasks_comleted = []
+    @tasks.last.review_ids.each do |review_id|
+      review = Review.find(review_id)
+      if review.user_id == current_user.id
+        @tasks_comleted << review_id
+      end
+
+    end
+    # @reviews = Review.all
+
     # raise
   end
 
@@ -17,6 +29,7 @@ class WorldsController < ApplicationController
     # @world = World.find(params[:id])
     # @world.destroy
   end
+
 
   private
 

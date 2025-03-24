@@ -11,6 +11,7 @@
     <div class="profile-info">
       <h2 class="profile-username"><%= current_user.username %></h2>
       <%= link_to "Profile Edit", edit_user_registration_path, class: "edit-profile-button" %>
+      <%= link_to "Sign-out", destroy_user_session_path, class: "edit-profile-button", data: { turbo_method: :delete } %>
     </div> <!-- Fechando corretamente profile-info -->
 
   </div> <!-- Fechando profile-header -->
@@ -42,4 +43,4 @@
       </div>
     <% end %>
   </div>
-</div> 
+</div>
