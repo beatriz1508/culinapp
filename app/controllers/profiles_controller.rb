@@ -23,6 +23,9 @@ class ProfilesController < ApplicationController
     @user_photos = current_user.photos.with_attached_image
   end
 
+  def destroy
+  end
+
   def upload_photo
     if params[:photos].present?
       params[:photos].each do |photo|
