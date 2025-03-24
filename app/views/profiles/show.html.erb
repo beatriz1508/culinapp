@@ -10,7 +10,8 @@
 
     <div class="profile-info">
       <h2 class="profile-username"><%= current_user.username %></h2>
-      <%= link_to "Profile Edit", edit_user_registration_path, class: "edit-profile-button" %>
+      <%= link_to "Edit Profile", edit_user_registration_path, class: "edit-profile-button" %>
+      <%= link_to "Sign-out", destroy_user_session_path, class: "edit-profile-button", data: { turbo_method: :delete } %>
     </div> <!-- Fechando corretamente profile-info -->
 
   </div> <!-- Fechando profile-header -->
@@ -27,19 +28,26 @@
   </div>
 
   <!-- Formulário de upload de foto -->
-  <%= form_with url: upload_photo_path, method: :post, local: true, html: { enctype: 'multipart/form-data' } do |form| %>
-    <%= form.file_field :photos, accept: "image/*", capture: "camera", multiple: true %>
-    <%= form.submit "Enviar Foto", class: "upload-button" %>
+
+  <%= simple_form_for current_user, url: profile_path(current_user) do |f| %>
+    <div class="row">
+      <div class="col-8">
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
+      </div>
+      <div class="col-4">
+        <%= f.submit "Adicionar Foto", class: 'btn btn-primary' %>
+      </div>
+    </div>
+
   <% end %>
 
+
   <!-- Galeria de fotos -->
-  <div class="gallery">
-    <% @user_photos.each do |photo| %>
-      <div class="photo-item">
-        <% if photo.image.attached? %>
-          <%= image_tag photo.image, alt: "#{current_user.username}'s Photo", class: "photo" %>
-        <% end %>
+  <div class="row">
+    <% current_user.photos.each do |photo| %>
+      <div class="col-4 mt-3">
+        <%= cl_image_tag photo.key, alt: "#{current_user.username}'s Photo", class: "img-fluid" %>
       </div>
     <% end %>
   </div>
-</div> 
+</div>

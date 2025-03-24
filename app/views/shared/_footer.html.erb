@@ -8,23 +8,23 @@
     </p>
 
     <!-- Página de Compartilhamento -->
-    <p class="<%= 'active' if current_page?(root_path) %>">
-      <%= link_to root_path do %>
+    <p class="<%= 'active' if current_page?(reviews_path) %>">
+      <%= link_to reviews_path do %>
         <i class="fa-solid fa-share-nodes"></i> <!-- Ícone de Compartilhamento -->
       <% end %>
     </p>
 
     <!-- Página de Notícias -->
-    <p class="<%= 'active' if current_page?(root_path) %>">
-      <%= link_to root_path do %>
+    <p class="<%= 'active' if current_page?(quiz_path) %>">
+      <%= link_to quiz_path do %>
         <i class="fa-solid fa-newspaper"></i> <!-- Ícone de Notícias -->
       <% end %>
     </p>
 
     <!-- Página de Perfil -->
-    <p class="<%= 'active' if current_page?(user_root_path) %>">
-      <%= link_to user_root_path do %>
-        <i class="fa-solid fa-user"></i> <!-- Ícone de Usuário -->
+    <p class="<%= 'active' if current_page?(ranking_path) %>">
+      <%= link_to ranking_path do %>
+        <i class="fa-solid fa-trophy"></i> <!-- Ícone de Troféu -->
       <% end %>
     </p>
   </div>

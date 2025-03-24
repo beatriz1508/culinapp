@@ -2,12 +2,12 @@
   <div class="navbar-container">
     <% if user_signed_in? %>
       <%= link_to user_root_path, class: "navbar-brand" do %>
-        <%= image_tag(current_user.avatar.presence || "avatar06.svg", class: "avatar", alt: "User Avatar") %>
+        <%= image_tag(current_user.avatar.presence || "default_avatar.svg", class: "avatar", alt: "User Avatar") %>
       <% end %>
       <h6 class="current-user">Hello, <%= current_user.username %></h6>
     <% else %>
       <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag("default_avatar.png", class: "avatar", alt: "Default Avatar") %>
+        <%= image_tag("default_avatar.svg", class: "avatar", alt: "Default Avatar") %>
       <% end %>
       <h6 class="current-user">Hello, Guest</h6>
     <% end %>

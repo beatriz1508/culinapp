@@ -2,6 +2,7 @@
 
 .container {
   width: 90%;
+  // height: 600px;
   max-width: 400px;
   background: white;
   border-radius: 20px;
@@ -133,15 +134,44 @@
   margin-top: 20px;
 }
 
+
+.tsk-btn{
+  display: flex;
+  flex-direction: row;
+  // grid-template-columns: 1fr 1fr;
+  margin-top: 3%;
+  justify-content: center;
+  gap: 15px;
+  // justify-content: space-between;
+  // align-items: center;
+  // text-align: center;
+}
+
 .button {
   display: inline-block;
-  background: #f4b400;
+  background: #FF9B05;
   color: white;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  // max-width: 20%;
+}
+
+.button-gray{
+  display: inline-block;
+  // background: #FF9B05;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #FF9B05;
+  min-width: 160px;
+  text-align: center;
 }
 
 .button:hover {

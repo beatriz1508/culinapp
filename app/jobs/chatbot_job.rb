@@ -29,7 +29,7 @@ private
 def questions_formatted_for_openai
   questions = @question.user.questions
   results = []
-  results << { role: "system", content: "You are an assistant for an e-commerce website." }
+  results << { role: "system", content: "You are an assistant for a cooking platform focused on teaching people how to cook better. Only answer questions related to cooking, and format your responses without any special symbols or characters (such as hashtags, asterisk, ampersand), plain text only." }
   questions.each do |question|
     results << { role: "user", content: question.user_question }
     results << { role: "assistant", content: question.ai_answer || "" }

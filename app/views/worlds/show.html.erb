@@ -1,37 +1,53 @@
 <div class="tasks-container">
-    <% if @tasks_comleted.empty? == true %>
-  <div class="task-card">
-    <div class="text-container">
-      <span class="first-text"> World: <%= @world.title %></span>
+  <% if @tasks_comleted.empty? %>
+    <div class="task-card">
+      <div class="text-container">
+        <span class="first-text"> World: <%= @world.title %></span>
+      </div>
+      <% if @world.icon_path.present? %>
+        <%= image_tag @world.icon_path, class: "tomato-image", alt: @world.title %>
+      <% end %>
     </div>
-      <%= image_tag "corn.svg", class: "tomato-image" %>
-  </div>
-    <% else %>
+  <% else %>
     <div class="completed-card">
       <div class="text-container">
-        <span class="first-text"> World Completed</span>
+        <span class="first-text"> <%= link_to "World Completed - click to go back", path_path(@world.path), class: "bk-btn" %></span>
       </div>
-      <%= image_tag "corn.svg", class: "tomato-image" %>
+      <% if @world.icon_path.present? %>
+        <%= image_tag @world.icon_path, class: "tomato-image", alt: @world.title %>
+      <% end %>
     </div>
-    <% end %>
+  <% end %>
+</div>
+
 
 
 
   <div class="invert-task">
-    <% @tasks.each do |task| %>
-      <div class="task">
-        <% if task == @next_task || current_user.reviews.find_by(task: task) %>
-          <div class="circle">
-            <%= link_to task_path(task) do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="lock-circle">
-            <i class="fas fa-lock"></i>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% @tasks.each do |task| %>
+    <div class="task">
+      <% if task == @next_task %>
+        <div class="circle" style="color: orange;">
+          <%= link_to task_path(task) do %>
+            <i class="fas fa-unlock"></i>
+          <% end %>
+        </div>
+      <% elsif current_user.reviews.find_by(task: task) %>
+        <div class="circle" style="color: orange;">
+          <%= link_to task_path(task) do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="lock-circle">
+          <i class="fas fa-lock"></i>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="character-container">
+  <%= image_tag "chef_burguer.svg", class: "character-image", alt: "character" %>
 </div>

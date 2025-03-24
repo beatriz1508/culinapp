@@ -1,8 +1,10 @@
 <div class="container chatbot">
-  <h1>ChafIA, sua sous chef virtual 🧑🏽‍🍳</h1>
+  <h1>
+    <%= image_tag("chatbot.svg", alt: "ChefIA Logo", class: "chatbot-icon") %>
+    ChefIA, your virtual sous chef.
+  </h1>
   <div id="questions">
     <%= render @questions %>
   </div>
-
   <%= render "form", question: @question %>
 </div>

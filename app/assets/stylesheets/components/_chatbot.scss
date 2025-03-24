@@ -1,55 +1,101 @@
 .chatbot {
-  background: white;
-  margin-top: 9px;
-  height: calc(100vh - 75px);
+  margin: 20px auto;
+  height: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
+  height: 90vh; // Evita que ultrapasse a tela
+  overflow: hidden; // Impede rolagem lateral indesejada
 
   h1 {
-    border-bottom: 1px solid $gray-200;
-    margin-bottom: 0;
-    padding: 1rem;
+    color: #ffffff;
+    background-color: #F7931E;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
   }
 
   #questions {
-    height: 100%;
-    overflow: scroll;
-    padding: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    // background: #FFF5E1;
+    border-radius: 10px;
+    max-height: calc(100vh - 200px);
+    background-image: asset-url("background.svg");
+    background-size: cover;
+    background-position: center;
+    // z-index: -1; // Ajusta a altura do histórico de perguntas para não ultrapassar a tela
   }
 
   .question {
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
   }
 
   .user-question, .ai-answer {
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    max-width: 70%;
-    width: fit-content;
+    border-radius: 1.5rem;
+    padding: 12px 16px;
+    max-width: 75%;
     word-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.4;
   }
 
   .user-question {
     align-self: flex-start;
-    background: $blue;
-    color: $light-gray;
+    background: #F7931E;
+    color: #ffffff;
   }
 
   .ai-answer {
     align-self: flex-end;
-    background: $gray-200;
+    background: #FFF5E1;
+    color: #333;
   }
-
+}
+  // Área do input e botão fixo na parte inferior
   #new_question {
-    border-top: 1px solid $gray-200;
-    padding: 1rem;
-
-    .form-group {
-      margin-bottom: 0;
-    }
+    display: flex;
+    gap: 61px;
+    background: #ffffff;
+    border: 1px solid #F7931E;
+    border-radius: 8px;
+    position: sticky;
+    bottom: 15px;
   }
+
+  .chatbot-input {
+    flex-grow: 1; /* Ocupa todo espaço disponível */
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    background: transparent;
+    color: aqua;
+  }
+
+  .chatbot-input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .chatbot-btn {
+    background: #F7931E;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .chatbot-btn:hover {
+    opacity: 0.9;
+  }
+
+  .chatbot-icon-mini {
+  width: 30px;
+  height: 30px;
 }

@@ -15,7 +15,7 @@
     <!-- ✅ Icon container stays inside navbar and aligned -->
     <div class="icon-container">
       <%= link_to user_root_path, class: "navbar-brand" do %>
-        <%= image_tag(current_user.avatar.presence || "avatar06.svg", class: "avatar", alt: "User Avatar") %>
+        <%= image_tag(current_user.avatar.presence || "default_avatar.svg", class: "avatar", alt: "User Avatar") %>
       <% end %>
     </div>
   </div>
