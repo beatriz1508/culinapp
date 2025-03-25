@@ -4,8 +4,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: 90vh; // Evita que ultrapasse a tela
-  overflow: hidden; // Impede rolagem lateral indesejada
+  height: 90vh;
+  overflow: hidden;
+  height: 580px;
 
   h1 {
     color: #ffffff;
@@ -13,20 +14,19 @@
     text-align: center;
     padding: 15px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 17px;
   }
 
   #questions {
     flex-grow: 1;
     overflow-y: auto;
     padding: 15px;
-    // background: #FFF5E1;
     border-radius: 10px;
     max-height: calc(100vh - 200px);
     background-image: asset-url("background.svg");
     background-size: cover;
     background-position: center;
-    // z-index: -1; // Ajusta a altura do histórico de perguntas para não ultrapassar a tela
+
   }
 
   .question {
@@ -64,7 +64,7 @@
     border: 1px solid #F7931E;
     border-radius: 8px;
     position: sticky;
-    bottom: 15px;
+    bottom: 1px;
   }
 
   .chatbot-input {
@@ -73,7 +73,6 @@
     padding: 12px;
     font-size: 16px;
     background: transparent;
-    color: aqua;
   }
 
   .chatbot-input:focus {
@@ -95,7 +94,12 @@
     opacity: 0.9;
   }
 
-  .chatbot-icon-mini {
+.chatbot-icon-mini {
   width: 30px;
   height: 30px;
+}
+
+.chatbot-icon {
+  width: 48px;
+  height: 48px;
 }

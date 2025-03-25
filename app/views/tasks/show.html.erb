@@ -1,14 +1,12 @@
-  <!-- Imagem do prato -->
+<!-- Imagem do prato -->
   <div class="image-container">
     <%= image_tag @task.image_url, class: "dish-image" %>
   </div>
-
   <!-- Chef Ilustração -->
       <div class="svg-container">
         <div class="chef-icon">
           <%= image_tag "chef_pasta.svg", class: "chef-image" %>
         </div>
-
     <!-- Detalhes da Receita -->
         <div class="recipe-details">
           <div class="txt-container">
@@ -20,40 +18,6 @@
           </div>
         </div>
       </div>
-
-
-  <div class="tsk-btn">
-    <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button-gray" %>
-    <%= link_to "🧑🏽‍🍳 ChefIA", questions_path(return_to: task_path(@task)), class: "button-gray" %>
-  </div>
-
-  <!-- Ingredientes -->
-  <div class="ingredients">
-    <h3 class="bold">Ingredients</h3>
-    <ul class="ingredients-list">
-<%# TODO implementar a lógica de ingredients %>
-      <% @ingredients.each do |ingredient| %>
-          <li class="task-list even"><%= ingredient.name %></li>
-          <li class="task-list odd"><%= ingredient.quantity %></li>
-      <% end %>
-
-    </ul>
-  </div>
-
-  <!-- Modo de Preparo -->
-  <div class="how-to">
-    <h3 class="bold">Recipe Steps</h3>
-    <ul class="steps-list">
-<%# TODO implementar a lógica de step %>
-      <% @task.steps.each do |t| %>
-        <li class="task-list"> - <%= t %></li>
-      <% end %>
-
-    </ul>
-  </div>
-
-<!-- app/views/tasks/show.html.erb -->
-  <!-- Botão Trivia Game -->
   <div class="tsk-btn">
     <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button-gray" %>
     <%= link_to questions_path(return_to: task_path(@task)), class: "button-gray" do %>
@@ -61,16 +25,31 @@
   ChefIA
   <% end %>
   </div>
-
+  <!-- Ingredientes -->
+  <div class="ingredients">
+    <h3 class="bold">Ingredients</h3>
+    <ul class="ingredients-list">
+      <% @ingredients.each do |ingredient| %>
+          <li class="task-list even"><%= ingredient.name %></li>
+          <li class="task-list odd"><%= ingredient.quantity %></li>
+      <% end %>
+    </ul>
+  </div>
+  <!-- Modo de Preparo -->
+  <div class="how-to">
+    <h3 class="bold">Recipe Steps</h3>
+    <ul class="steps-list">
+      <% @task.steps.each do |t| %>
+        <li class="task-list"> - <%= t %></li>
+      <% end %>
+    </ul>
+  </div>
   <!-- Botão Completar -->
   <div data-controller="sound" class="complete-btn">
-    <%= simple_form_for [@task, @review], data: { turbo: false, action: "submit->sound#play" } do |f| %>
-      <%= f.submit "Complete", class: "button" %>
-    <% end %>
+    <h5 class="recipe-done"><strong> Are you done with your recipe? 🥘</strong></h5>
+      <%= simple_form_for [@task, @review], data: { turbo: false, action: "submit->sound#play" } do |f| %>
+        <%= f.submit "Let's review!", class: "button" %>
+      <% end %>
     <audio data-sound-target="audio" src="<%= asset_path("beep.mp3") %>"></audio>
   </div>
   <div class="btn-space"></div>
-
-  <!-- ChatBot ChefIA -->
-
-  <!-- Botão Completar -->
