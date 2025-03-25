@@ -28,7 +28,7 @@
       <!-- ✅ Action Buttons always visible -->
       <div class="tsk-btn">
         <%= link_to "Play Again", quiz_path(return_to: @return_to), class: "button-gray" %>
-        <%= link_to "Back to Recipe", @return_to || root_path, class: "button-gray" %>
+        <%= link_to "Back to Recipe", @return_to || task_path, class: "button-gray" %>
       </div>
 
     </div>
