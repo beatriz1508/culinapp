@@ -20,6 +20,7 @@
   <% end %>
 </div>
 
+<<<<<<< Updated upstream
 
 
 
@@ -51,3 +52,12 @@
 <div class="character-container">
   <%= image_tag "chef_burguer.svg", class: "character-image", alt: "character" %>
 </div>
+=======
+<% @tasks.each do |task| %>
+<ul>
+  <li><%= task.title %></li>
+</ul>
+<%= link_to "task", task_path(task) %>
+<% end %>
+
+>>>>>>> Stashed changes
