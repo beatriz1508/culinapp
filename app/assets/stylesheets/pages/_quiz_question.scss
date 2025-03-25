@@ -1,8 +1,15 @@
+.form {
+  padding: 30px;
+  margin: -5px auto;
+}
+
+
 .quiz-container {
   max-width: 500px;
-  height: 100%;
-  margin: 20px auto;
-  padding: 20px;
+  //height: 100%;
+  min-height: 100vh;
+  margin: 5px auto;
+  padding: 1px;
   background-color: #f79b28;
   border-radius: 12px;
   text-align: center;
@@ -25,19 +32,19 @@
 .answers-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 0 30px; /* Adds horizontal spacing between answers and container border */
+  gap: 20px;
+  padding: 25px 30px;
 }
 
 .answer-option {
   background-color: #fff;
-  color: #f79b28;
+  color: #000000;
   font-weight: 600;
-  padding: 10px 15px;
+  padding: 6px 10px;
   border-radius: 30px;
   cursor: pointer;
   border: none;
-  font-size: 12px;          /* Increased from 8px for better readability */
+  font-size: 15px;          /* Increased from 8px for better readability */
   text-transform: case;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -59,14 +66,14 @@
 .submit-button {
   background-color: #fff;
   color: #f79b28;
-  font-weight: 400;
+  font-weight: 600;
   border: none;
-  padding: 5px 20px;       /* More balanced padding */
+  padding: 12px 20px;       /* More balanced padding */
   border-radius: 30px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 1px;
   text-transform: downcase;
-  font-size: 10px;          /* Increased from 8px */
+  font-size: 13px;          /* Increased from 8px */
   width: 60%;               /* Looks better and scales */
   transition: background-color 0.3s ease, color 0.3s ease;
 }

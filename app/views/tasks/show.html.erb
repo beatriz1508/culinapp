@@ -34,7 +34,6 @@
   <div class="ingredients">
     <h3 class="bold">Ingredients</h3>
     <ul class="ingredients-list">
-<%#  implementar a lógica de ingredients %>
       <% @ingredients.each do |ingredient| %>
           <li class="task-list even"><%= ingredient.name %></li>
           <li class="task-list odd"><%= ingredient.quantity %></li>
@@ -47,7 +46,6 @@
   <div class="how-to">
     <h3 class="bold">Recipe Steps</h3>
     <ul class="steps-list">
-<%# implementar a lógica de step %>
       <% @task.steps.each do |t| %>
         <li class="task-list"> - <%= t %></li>
       <% end %>
@@ -57,13 +55,10 @@
 
   <!-- Botão Completar -->
   <div data-controller="sound" class="complete-btn">
+  <h5> Are you done with your recipe?  </h5>
     <%= simple_form_for [@task, @review], data: { turbo: false, action: "submit->sound#play" } do |f| %>
-      <%= f.submit "Complete", class: "button" %>
+      <%= f.submit "Let's review!", class: "button" %>
     <% end %>
     <audio data-sound-target="audio" src="<%= asset_path("beep.mp3") %>"></audio>
   </div>
   <div class="btn-space"></div>
-
-  <!-- ChatBot ChefIA -->
-
-  <!-- Botão Completar -->

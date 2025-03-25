@@ -5,21 +5,17 @@
   padding: 1% 2%;
   background-color: white;
   border-bottom: 1px solid #ddd;
-
 }
-
 .navbar-brand {
   display: flex;
   align-items: center;
   margin-right: 2%;
 }
-
 .avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-
 .current-user {
   margin: 0;
   font-size: 16px;
@@ -28,12 +24,10 @@
   text-align: left;
   margin-left: 5%; /* Alinha à esquerda */
 }
-
 .icon-container {
   display: flex;
   align-items: center;
 }
-
 .icon-logo {
   width: 40px;
   height: 40px;

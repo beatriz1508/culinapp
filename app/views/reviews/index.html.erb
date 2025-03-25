@@ -1,13 +1,3 @@
-<%# <% @reviews.each do |r| %>
-  <%# <% if r.photo.attached? %>
-    <%# <%= cl_image_tag r.photo.key, height: 300, width: 400, crop: :fill %>
-  <%# <% else %>
-    <%# <%= image_tag "plate.png", height: 300, width: 400, crop: :fill %>
-  <%# <% end %>
-  <%# <%= r.rating %>
-  <%# <%= link_to "Like this dish", like_path(review_id: r.id), method: :post, data: { turbo: false } %>
-<%# <% end %>
-
 <% @reviews.each do |r| %>
   <div class="review-card">
     <% if r.photo.attached? %>
