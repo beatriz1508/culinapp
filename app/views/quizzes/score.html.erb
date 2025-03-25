@@ -14,7 +14,7 @@
 
         <p class="result-text">You chose the right answer!</p>
 
-        <img src="/assets/chef_icecream.svg" alt="Chef with ice cream" class="character-img">
+        <img src="chef_icecream.svg" alt="Chef with ice cream" class="character-img">
 
       <% else %>
         <!-- ✅ Crying Emoji Animation - closer to the card -->
@@ -28,7 +28,7 @@
       <!-- ✅ Action Buttons always visible -->
       <div class="tsk-btn">
         <%= link_to "Play Again", quiz_path(return_to: @return_to), class: "button-gray" %>
-        <%= link_to "Back to Recipe", @return_to || task_path, class: "button-gray" %>
+        <%= link_to "Back to Recipe", @return_to, class: "button-gray" %>
       </div>
 
     </div>
