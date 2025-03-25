@@ -5,11 +5,12 @@
 
     <h3 class="question-text"><%= @question.content %></h3>
 
-    <% if @question.image_url.present? %>
-      <div class="question-image">
-        <%= image_tag @question.image_url, alt: "Quiz Question Image", class: "quiz-image" %>
-      </div>
+   <% if @question.image_url.present? %>
+    <div class="question-image">
+    <%= image_tag @question.image_url, alt: "Quiz Question Image", class: "quiz-image border border-warning-subtle rounded-7" %>
+    </div>
     <% end %>
+
 
     <div class="answers-container">
       <% @question.quiz_answers.each do |answer| %>
