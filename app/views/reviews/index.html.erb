@@ -1,12 +1,33 @@
 <% @reviews.each do |r| %>
-  <div class="review-card">
-    <% if r.photo.attached? %>
-      <%= cl_image_tag r.photo.key, height: 300, width: 400, crop: :fill %>
-    <% else %>
-      <%= image_tag "plate.png", height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <p class="review-feedback"><%= r.feedback %></p> <!-- Exibindo a descrição da review -->
-    <p class="review-rating">Likes: <%= r.rating %></p>
-    <%= link_to "Like this dish", like_path(review_id: r.id), method: :post, data: { turbo: false } %>
+  <div class="review-container">
+    <div class="review-card">
+      <% if r.photo.attached? %>
+        <div class="review-image">
+          <%= cl_image_tag r.photo.key, crop: :fill %>
+          <div class="like-overlay">
+            <%= link_to like_path(review_id: r.id), method: :post, class: "like-button", data: { turbo: false } do %>
+              <i class="fa fa-heart"></i>
+            <% end %>
+            <p><%= r.rating %></p>
+          </div>
+        </div>
+      <% else %>
+        <div class="review-image">
+          <%= image_tag "plate.png", crop: :fill %>
+          <div class="like-overlay">
+            <%= link_to like_path(review_id: r.id), method: :post, class: "like-button", data: { turbo: false } do %>
+              <i class="fa fa-heart"></i>
+            <% end %>
+            <p><%= r.rating %></p>
+          </div>
+        </div>
+      <% end %>
+
+
+      <div class="review-feedback-box">
+        <i class="fa fa-comment"></i>
+        <p class="review-feedback"><%= r.feedback %></p> 
+      </div>
+    </div>
   </div>
 <% end %>

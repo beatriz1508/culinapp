@@ -68,3 +68,14 @@
   right: 16px;
 }
 
+.character-container {
+  position: fixed; /* Fixa o personagem na tela */
+  top: 74%; /* Alinha o personagem verticalmente ao centro da tela */
+  right: 0;
+  transform: translateY(-50%); /* Ajusta a posição para centralizar verticalmente */
+  z-index: 10;
+}
+
+.character-image {
+  width: 200px;
+}

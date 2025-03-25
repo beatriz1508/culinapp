@@ -1,14 +1,12 @@
-  <!-- Imagem do prato -->
+<!-- Imagem do prato -->
   <div class="image-container">
     <%= image_tag @task.image_url, class: "dish-image" %>
   </div>
-
   <!-- Chef Ilustração -->
       <div class="svg-container">
         <div class="chef-icon">
           <%= image_tag "chef_pasta.svg", class: "chef-image" %>
         </div>
-
     <!-- Detalhes da Receita -->
         <div class="recipe-details">
           <div class="txt-container">
@@ -20,8 +18,6 @@
           </div>
         </div>
       </div>
-
-
   <div class="tsk-btn">
     <%= link_to "🎮 Play Game", quiz_path(return_to: task_path(@task)), class: "button-gray" %>
     <%= link_to questions_path(return_to: task_path(@task)), class: "button-gray" do %>
@@ -29,7 +25,6 @@
   ChefIA
   <% end %>
   </div>
-
   <!-- Ingredientes -->
   <div class="ingredients">
     <h3 class="bold">Ingredients</h3>
@@ -38,10 +33,8 @@
           <li class="task-list even"><%= ingredient.name %></li>
           <li class="task-list odd"><%= ingredient.quantity %></li>
       <% end %>
-
     </ul>
   </div>
-
   <!-- Modo de Preparo -->
   <div class="how-to">
     <h3 class="bold">Recipe Steps</h3>
@@ -49,16 +42,14 @@
       <% @task.steps.each do |t| %>
         <li class="task-list"> - <%= t %></li>
       <% end %>
-
     </ul>
   </div>
-
   <!-- Botão Completar -->
   <div data-controller="sound" class="complete-btn">
-  <h5> Are you done with your recipe?  </h5>
-    <%= simple_form_for [@task, @review], data: { turbo: false, action: "submit->sound#play" } do |f| %>
-      <%= f.submit "Let's review!", class: "button" %>
-    <% end %>
+    <h5 class="recipe-done"><strong> Are you done with your recipe? 🥘</strong></h5>
+      <%= simple_form_for [@task, @review], data: { turbo: false, action: "submit->sound#play" } do |f| %>
+        <%= f.submit "Let's review!", class: "button" %>
+      <% end %>
     <audio data-sound-target="audio" src="<%= asset_path("beep.mp3") %>"></audio>
   </div>
   <div class="btn-space"></div>
