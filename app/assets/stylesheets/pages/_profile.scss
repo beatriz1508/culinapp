@@ -7,9 +7,7 @@
   font-family: Arial, sans-serif;
   position: relative;
   min-height: 110vh;
-
 }
-
 .main-show-profile-container::before {
   content: ""; /* Cria um elemento virtual */
   position: absolute;
@@ -20,7 +18,6 @@
   background-color: rgba(255, 155, 5, 0.05);
   z-index: -1;
 }
-
 .profile-header {
   display: flex;
   flex-direction: column;
@@ -33,7 +30,6 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-
 .profile-avatar-container {
   width: 120px;
   height: 120px;
@@ -44,25 +40,20 @@
   align-items: center;
   margin-top: 10px;
 }
-
 .profile-avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
-
-
 .profile-info {
   text-align: center
 }
-
 .profile-username {
   margin: 5px 0;
   font-size: 20px;
   font-weight: 600;
 }
-
 .edit-profile-button {
   background-color: #FF9B05;
   border: none;
@@ -81,8 +72,6 @@
   padding: 4px 8px;
   margin-top: 5px;
 }
-
-
 .badges-container {
   display: flex;
   overflow-x: auto;  /* Permite rolagem horizontal */
@@ -92,39 +81,33 @@
   -ms-overflow-style: none;
   padding-left: 10px;
 }
-
 .badge {
   flex: 0 0 auto;
 }
-
 .badge-image {
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
 }
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas flexíveis */
   gap: 10px;
   padding: 10px;
 }
-
 .photo-item {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
-
 .photo-item img {
   width: 100%;
   height: auto;
   object-fit: cover; /* As imagens cobrem a área sem distorcer */
   border-radius: 5px;
 }
-
 .btn-add-photo {
   background-color: #FF9B05; /* Exemplo de cor */
   color: white;
@@ -135,23 +118,12 @@
   align-items: center;
   justify-content: center;
 }
-
 .btn-add-photo i {
   margin-right: 8px; /* Espaçamento entre o ícone e o texto */
 }
-
 .btn-add-photo:hover {
   background-color: #FF7A00; /* Efeito de hover */
 }
-
-.col-8 {
-  margin-right: 10px; /* Ajusta o espaçamento entre as colunas */
-}
-
-.col-4 {
-  margin-left: 10px; /* Ajusta o espaçamento entre as colunas */
-}
-
 
 @media (max-width: 480px) {
   .gallery {

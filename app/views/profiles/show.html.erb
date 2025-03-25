@@ -7,49 +7,44 @@
         <%= image_tag(asset_path('default_avatar.svg'), alt: 'Default Avatar', class: 'profile-avatar') %>
       <% end %>
     </div>
-
     <div class="profile-info">
       <h2 class="profile-username"><%= current_user.username %></h2>
       <%= link_to "Edit Profile", edit_user_registration_path, class: "edit-profile-button" %>
       <%= link_to "Sign-out", destroy_user_session_path, class: "edit-profile-button", data: { turbo_method: :delete } %>
     </div> <!-- Fechando corretamente profile-info -->
-
   </div> <!-- Fechando profile-header -->
 
-  <div class="badges-container">
-    <% @badges.each do |world_id, reviews| %>
-      <% if reviews == 5 %>
-        <% world = World.find(world_id) %>
-        <div class="badge">
-          <%= image_tag world.image_path, alt: "#{world.title}'s Badge", class: "badge-image"%>
+  <div class= "p-4">
+    <div class="badges-container">
+      <% @badges.each do |world_id, reviews| %>
+        <% if reviews == 5 %>
+          <% world = World.find(world_id) %>
+          <div class="badge">
+            <%= image_tag world.image_path, alt: "#{world.title}'s Badge", class: "badge-image"%>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- Formulário de upload de foto -->
+    <%= simple_form_for current_user, url: profile_path(current_user) do |f| %>
+      <div class="d-flex gap-2">
+        <div>
+          <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
+        </div>
+        <div>
+          <%= button_tag class: 'btn-add-photo', type: 'submit' do %>
+            <i class="fas fa-paper-plane"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <!-- Galeria de fotos -->
+    <div class="row">
+      <% current_user.photos.each do |photo| %>
+        <div class="col-4 mt-3">
+          <%= cl_image_tag photo.key, alt: "#{current_user.username}'s Photo", class: "img-fluid" %>
         </div>
       <% end %>
-    <% end %>
-  </div>
-
-  <!-- Formulário de upload de foto -->
-
-  <%= simple_form_for current_user, url: profile_path(current_user) do |f| %>
-    <div class="row">
-      <div class="col-8">
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
-      </div>
-      <div class="col-4">
-        <%= button_tag class: 'btn-add-photo', type: 'submit' do %>
-        <i class="fas fa-paper-plane"></i>
-      <% end %>
-      </div>
     </div>
-
-  <% end %>
-
-
-  <!-- Galeria de fotos -->
-  <div class="row">
-    <% current_user.photos.each do |photo| %>
-      <div class="col-4 mt-3">
-        <%= cl_image_tag photo.key, alt: "#{current_user.username}'s Photo", class: "img-fluid" %>
-      </div>
-    <% end %>
   </div>
 </div>
