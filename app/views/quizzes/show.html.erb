@@ -5,24 +5,23 @@
 
     <h3 class="question-text"><%= @question.content %></h3>
 
-    <% @question.quiz_answers.each do |answer| %>
-      <div class="answer-option">
-        <label class="answer-label" for="answer_<%= answer.id %>">
-          <%= radio_button_tag "quiz_answer_id", answer.id, false, id: "answer_#{answer.id}", class: "answer-radio" %>
-          <%= answer.content %>
-        </label>
+    <% if @question.image_url.present? %>
+      <div class="question-image">
+        <%= image_tag @question.image_url, alt: "Quiz Question Image", class: "quiz-image" %>
       </div>
     <% end %>
 
-    <%= hidden_field_tag :quiz_question_id, @question.id %>
-   <br>
-  <%= submit_tag "submit answer", class: "submit-button" %>
-<% end %>
-</div>
-
- <!-- Chef Ilustração -->
-<div class="svg-container-quiz">
-  <div class="chef-icon">
-    <%= image_tag "chef_pasta.svg", class: "chef-image" %>
+    <div class="answers-container">
+      <% @question.quiz_answers.each do |answer| %>
+        <label class="answer-option" for="answer_<%= answer.id %>">
+          <%= radio_button_tag "quiz_answer_id", answer.id, false, id: "answer_#{answer.id}", class: "answer-radio" %>
+          <%= answer.content %>
+        </label>
+      <% end %>
     </div>
+
+    <%= hidden_field_tag :quiz_question_id, @question.id %>
+
+    <%= submit_tag "SUBMIT", class: "submit-button" %>
+  <% end %>
 </div>

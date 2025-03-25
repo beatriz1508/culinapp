@@ -22,12 +22,14 @@ World.destroy_all
 
 # Creating Users and Profiles
 user1 = User.create!(
+  username: "qwserty",
   email: "user1@example.com",
   password: "password123",
   password_confirmation: "password123"
 )
 
 user2 = User.create!(
+  username: "qwserty",
   email: "user2@example.com",
   password: "password123",
   password_confirmation: "password123"
@@ -3826,17 +3828,70 @@ Journey.create!(
 )
 
 # criando trivia
-q1 = QuizQuestion.create!(content: 'What is 10/2?')
-q1.quiz_answers.create!(content: '5', correct: true)
-q1.quiz_answers.create!(content: '2', correct: false)
-q1.quiz_answers.create!(content: '8', correct: false)
+QuizAnswer.destroy_all
+QuizQuestion.destroy_all
 
-q2 = QuizQuestion.create!(content: 'What is 30/3?')
-q2.quiz_answers.create!(content: '10', correct: true)
-q2.quiz_answers.create!(content: '5', correct: false)
-q2.quiz_answers.create!(content: '3', correct: false)
+questions_data = [
+  {
+    content: "Why do recipes sometimes tell you to “deglaze” a pan?",
+    image_url: "https://res.cloudinary.com/dnnzp5urk/image/upload/v1742852605/download_5_mkocrk.jpg",
+    answers: [
+      { content: "So you can practice pretending you're on a cooking show", correct: false },
+      { content: "To loosen flavorful bits stuck to the pan", correct: true },
+      { content: "To make the pan less sad about being burnt", correct: false }
+    ]
+  },
+  {
+    content: "What happens if you crowd the pan when searing meat?",
+    image_url: "https://res.cloudinary.com/dnnzp5urk/image/upload/v1742852605/1_v1wb7w.jpg",
+    answers: [
+      { content: "It browns better", correct: false },
+      { content: "It steams, not sears", correct: true },
+      { content: "It tastes saltier", correct: false }
+    ]
+  },
+  {
+    content: "Why should pasta water be salty?",
+    image_url: "https://res.cloudinary.com/dnnzp5urk/image/upload/v1742852605/2_mg9qjg.jpg",
+    answers: [
+      { content: "For better boiling", correct: false },
+      { content: "It flavors the pasta", correct: true },
+      { content: "To scare the carbs", correct: false }
+    ]
+  },
 
+  {
+    content: "Why should you “rest” a steak after cooking?",
+    image_url: "https://res.cloudinary.com/dnnzp5urk/image/upload/v1742852605/download_3_q33ekm.jpg",
+    answers: [
+      { content: "It’s tired from all the sizzle", correct: false },
+      { content: "So the juices redistribute", correct: true },
+      { content: "You need time to Google “how to cook steak”", correct: false }
+    ]
+  },
+  {
+    content: "What’s the difference between baking soda and baking powder?",
+    image_url: "https://res.cloudinary.com/dnnzp5urk/image/upload/v1742852605/download_1_ynwgox.jpg",
+    answers: [
+      { content: "One makes things rise, the other just judges your cooking silently", correct: false },
+      { content: "Baking soda needs acid to work, baking powder has acid mixed in", correct: true },
+      { content: "Baking powder is what you yell when you mess up a cake", correct: false }
+    ]
+  }
+]
 
+questions_data.each do |q_data|
+  question = QuizQuestion.create!(
+    content: q_data[:content],
+    image_url: q_data[:image_url]
+  )
+  q_data[:answers].each do |a_data|
+    QuizAnswer.create!(
+      quiz_question_id: question.id,
+      content: a_data[:content],
+      correct: a_data[:correct]
+    )
+  end
+end
 
-# Exibindo informações para confirmar que o seeding foi bem-sucedido
-puts "Seed data successfully created!"
+puts "✅ Seeded #{QuizQuestion.count} questions with #{QuizAnswer.count} answers!"
