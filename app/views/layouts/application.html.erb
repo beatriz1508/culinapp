@@ -11,7 +11,6 @@
   </head>
 
   <body>
-<<<<<<< Updated upstream
     <% if current_page?(root_path) %>
       <div data-controller="splash">
         <div class="splash" data-splash-target="splash">
@@ -20,7 +19,7 @@
       </div>
     <% end %>
   <% if user_signed_in? %>
-   
+
 
     <% if request.path == root_path %>
       <%= render "shared/navbar" %>
@@ -28,10 +27,6 @@
       <%= render "shared/navbarii" %>
     <% end %>
 
-=======
-    <%= render "shared/flashes" %>
-    <%# <%= render "shared/navbar" %> %>
->>>>>>> Stashed changes
     <%= yield %>
 
     <%= render "shared/footer" %>
