@@ -6,3 +6,4 @@
 //= link bootstrap.min.js
 //= link application.css
 //= link_tree ../audio
+//= link application.css
