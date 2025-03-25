@@ -202,3 +202,12 @@
 .bold{
   font-weight: bold;
 }
+
+.incorrect-card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 30px;
+  padding: 40px 20px;
+  text-align: center;
+  margin: 40px 0;         /* ✅ Push it away from top and bottom */
+}
