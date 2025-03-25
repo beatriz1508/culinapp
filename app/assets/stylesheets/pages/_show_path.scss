@@ -13,16 +13,6 @@
   display: inline-block; /* ensures consistent alignment */
 }
 
-.world-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;      /* Centers cards horizontally */
-  justify-content: center;  /* Centers vertically if needed */
-  gap: 20px;                /* Adds consistent vertical spacing between cards */
-  width: 100%;              /* Full width for flexible responsiveness */
-  padding: 20px 0;          /* Optional vertical padding for spacing from top/bottom */
-}
-
 .element-2 span {
   font-size: 20px !important;
   font-weight: 400 !important;
