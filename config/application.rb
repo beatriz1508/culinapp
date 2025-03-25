@@ -23,5 +23,7 @@ module Culinapp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.assets.precompile += [".svg"]
   end
 end
