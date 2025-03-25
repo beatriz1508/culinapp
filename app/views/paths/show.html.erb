@@ -12,12 +12,11 @@
 
         <div class="lock-small">
           <% if world.locked? %>
-            <i class="fas fa-lock"></i> 
+            <i class="fas fa-lock"></i>
           <% else %>
             <% # Aqui é onde vamos verificar se as 5 reviews foram completadas %>
             <% completed_reviews = world.tasks.sum { |task| task.reviews.where(user: current_user).count } %>
 
-<<<<<<< Updated upstream
             <% if completed_reviews >= 5 %>
               <i class="fas fa-star" style="color: #0FA3B1;"></i>
             <% else %>
@@ -35,16 +34,3 @@
     </div>
   <% end %>
 </div>
-=======
-<%# index de world %>
-<% @worlds.each do |world| %>
-  <ul>
-    <li><%= world.id %></li>
-    <li><%= world.title %></li>
-    <%= link_to "Play", world_path(world) %>
-  </ul>
-<% end %>
-
-<%= link_to "Back to Paths", root_path %>
-
->>>>>>> Stashed changes
