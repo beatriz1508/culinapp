@@ -1,35 +1,35 @@
-<div class="result-container <%= @result == 'correct' ? 'correct' : 'incorrect' %>">
+<div class="page-container">
+  <div class="result-container <%= @result == 'correct' ? 'correct' : 'incorrect' %>">
+    <div class="all-content">
+      <% if @result == "correct" %>
+        <!-- Question Text on Top -->
+        <p class="result-text">Congrats, you chose the right answer!</p>
 
-  <% if @result == "correct" %>
-    <!-- Question Text on Top -->
-    <p class="result-text">congrats, you choose the right answer!</p>
+        <!-- Correct Answer Styled Block with white background -->
+        <div class="answer-badge">
+          <div class="answer-content">
+            <span class="answer-text"><%= @selected_answer || "YOUR ANSWER" %></span>
+          </div>
+        </div>
 
-    <h2 class="question-title"><%= @question.content %></h2>
+        <img src="/assets/chef_icecream.svg" alt="Chef with ice cream" class="character-img">
 
-    <!-- Correct Answer Styled Block with white background -->
-    <div class="answer-badge">
-      <div class="answer-content">
-        <span class="answer-text"><%= @selected_answer&.upcase || "YOUR ANSWER" %></span>
+      <% else %>
+        <!-- Incorrect Answer Block -->
+        <div class="incorrect-card">
+          <h2>Oops...</h2>
+          <h2>Sorry, you didn't get it right this time!</h2>
+          <div class="try-again-tag">
+            Let's play again? <span class="try-again-icon">✖</span>
+          </div>
+        </div>
+      <% end %>
+
+      <!-- ✅ These Buttons show no matter what -->
+      <div class="tsk-btn">
+        <%= link_to "Play Again", quiz_path(return_to: @return_to), class: "button-gray" %>
+        <%= link_to "Back to Recipe", @return_to || root_path, class: "button-gray" %>
       </div>
     </div>
-
-    <img src="/assets/chef_icecream.svg" alt="Chef with ice cream" class="character-img">
-
-  <% else %>
-    <!-- Incorrect Answer Block -->
-    <div class="incorrect-card">
-      <h2>Oops...</h2>
-      <h2> sorry, you didn't get it right this time! </h2>
-      <div class="try-again-tag">
-        Let's play again? <span class="try-again-icon">✖</span>
-      </div>
-    </div>
-  <% end %>
-
-</div>
-
-<!-- ✅ These Buttons show no matter what -->
-<div class="buttons-container">
-  <%= link_to "PLAY AGAIN", quiz_path(return_to: @return_to), class: "custom-button-quizz" %>
-  <%= link_to "BACK TO RECIPE", @return_to || root_path, class: "custom-button-quizz" %>
+  </div>
 </div>

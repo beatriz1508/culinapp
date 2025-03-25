@@ -1,12 +1,17 @@
 .result-container {
-  background-color: #f79b28;
-  color: #fff;
-  padding: 30px 20px;
+  background-color: #fff;       /* White card */
+  color: #000;
+  padding: 40px 20px;
   border-radius: 16px;
   text-align: center;
-  max-width: 400px;
-  margin: 40px auto;
+  max-width: 500px;
+  margin: 0 auto;
   font-family: 'Poppins', sans-serif;
+}
+
+.question-title {
+  color: black;
+  margin-bottom: 20px;
 }
 
 /* Incorrect Card */
@@ -74,15 +79,15 @@
 }
 
 .answer-content {
-  background-color: #fff;
-  color: #f79b28;
+  background-color:  #f79b28;
+  color: black;
   padding: 15px 30px;
   border-radius: 50px;
   display: inline-flex;
   align-items: center;
   gap: 15px;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 25px;
 }
 
 .answer-text {
@@ -93,3 +98,38 @@
   color: #f79b28;
   font-size: 18px;
 }
+
+.result-text {
+  margin-bottom: 10px;
+  margin-top: 15px;
+
+}
+
+.all-content {
+  text-align: center;  /* ✅ Keeps all inner content aligned */
+}
+
+.button-score{
+
+    display: inline-block;
+    // background: #FF9B05;
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #FF9B05;
+    min-width: 160px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+
+  .page-container {
+    background-color: #f79b28;   /* Full page orange background */
+    min-height: 100vh;           /* Fill the entire viewport */
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
