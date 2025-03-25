@@ -35,7 +35,9 @@
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
       </div>
       <div class="col-4">
-        <%= f.submit "Adicionar Foto", class: 'btn btn-primary' %>
+        <%= button_tag class: 'btn-add-photo', type: 'submit' do %>
+        <i class="fas fa-paper-plane"></i>
+      <% end %>
       </div>
     </div>
 
